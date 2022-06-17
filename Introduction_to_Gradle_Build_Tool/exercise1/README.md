@@ -1,7 +1,7 @@
 ## Introduction to Gradle Build Tool - Exercise 1
 
 <p align="left">
-<img width="10%" height="10%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/images/gradle_training_gradient_logo.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="10%" height="10%" src="https://user-images.githubusercontent.com/120980/174325546-8558160b-7f16-42cb-af0f-511849f22ebc.png">
 </p>
 
 This is a hands-on exercise to go along with the
@@ -95,13 +95,13 @@ drwxr-xr-x  4 adayal  staff   128 May 12 06:38 app
 Launch IntelliJ and open the `settings.gradle` file as a project.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise1/images/open_in_ide.png?token=GHSAT0AAAAAABVU3J6CT7BBDDJ5SYN3C5UWYVMR4QQ">
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174327155-818c016b-3f7b-496d-97c9-2a6ad7e905c3.png">
 </p>
 
 If asked to trust the file, say yes.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise1/images/ide_trust_project.png?token=GHSAT0AAAAAABVU3J6D3JYZQ7M2H2E4AYRCYVMR5EQ">
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174327312-93cdc714-9a78-47b0-86a0-d1ca72ce86df.png">
 </p>
 
 Look at the following files:
@@ -113,7 +113,7 @@ In the `app/build.gradle.kts` file hover over the `mavenCentral()` word and
 notice the help tooltip popup.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise1/images/ide_tooltip.png?token=GHSAT0AAAAAABVU3J6D6B27TBOBZA7L2JHWYVMR5RA">
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174327421-da264871-bad8-4d36-bd23-e156eeeebbcb.png">
 </p>
 
 Notice sample sources and tests have been created:
@@ -121,7 +121,7 @@ Notice sample sources and tests have been created:
 * `app/src/test/java/com/gradle/lab/AppTest.java`
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise1/images/sample_app.png?token=GHSAT0AAAAAABVU3J6DVRBFCLBQNGHK5AYIYVMR55A">
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174327548-d03ad27f-32c7-4e44-a111-04de4cc21fa3.png">
 </p>
 
 ---

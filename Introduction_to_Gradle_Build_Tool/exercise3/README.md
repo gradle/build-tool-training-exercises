@@ -1,7 +1,7 @@
 ## Introduction to Gradle Build Tool - Exercise 3
 
 <p align="left">
-<img width="10%" height="10%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/images/gradle_training_gradient_logo.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="10%" height="10%" src="https://user-images.githubusercontent.com/120980/174325546-8558160b-7f16-42cb-af0f-511849f22ebc.png">
 </p>
 
 This is a hands-on exercise to go along with the
@@ -28,14 +28,14 @@ Open the terminal from the bottom toolbar and run
 configurations.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise3/images/app_deps.png?token=GHSAT0AAAAAABVU3J6CWYRZC7M3Y5MODGQSYVMSJBA">
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174330482-f470305a-210f-4780-b47e-5340c6a7de70.png">
 </p>
 
 To see the dependencies of just the runtimeClasspath configuration run
 `./gradlew :app:dependencies --configuration=runtimeClasspath`
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise3/images/runtime_deps.png?token=GHSAT0AAAAAABVU3J6DS5NKXW5DJU5MEMZIYVMSJLQ">
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174330540-ed0e3ad2-d76b-4cca-8830-7c27d324261c.png">
 </p>
 
 ### Adding Dependencies
@@ -57,21 +57,21 @@ click on it, and then click on the `1.41.8` version
 * Copy the dependency statement
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise3/images/mvn_repo.png?token=GHSAT0AAAAAABVU3J6CGXTPBXMORPVXKOA2YVMSJYQ">
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174330616-2b3965b2-f9bd-4665-90cc-5e7d0c4ed7ab.png">
 </p>
 
 In your `build.gradle.kts` file, go to the `dependencies` block and paste
 the statement there. Click on the Gradle elephant icon to refresh the configs.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise3/images/paste_dep.png?token=GHSAT0AAAAAABVU3J6DVXAVGUJCZFABJPJEYVMSKCA">
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174330680-0b3b00cb-4944-4564-8a64-db9faa84d2c8.png">
 </p>
 
 Run the `./gradlew :app:dependencies --configuration=runtimeClasspath` again
 and notice the additional dependencies - both direct and transitive.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise3/images/additional_deps_added.png?token=GHSAT0AAAAAABVU3J6CW3RE36MATBDGZLSEYVMSKOA">
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174330739-0c7c0236-b3e2-4b43-b536-de6c2db5f5e2.png">
 </p>
 
 ### Examining Dependency Conflict Resolution
@@ -80,7 +80,7 @@ Notice in the dependencies, the `google-http-client` library depends on
 `guava`, which is also a direct dependency.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise3/images/guava_direct_dep.png?token=GHSAT0AAAAAABVU3J6C3S3VY3RFZBWO4WLWYVMSK3A">
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174330809-387755b1-b63f-46e6-8025-e0eeb8363275.png">
 </p>
 
 The `guava` version `google-http-client` depends on is older than the
@@ -88,7 +88,7 @@ version in the direct dependency, so you will see Gradle handles the
 conflict by using the highest version of the `guava` library.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise3/images/conflict.png?token=GHSAT0AAAAAABVU3J6CRYGSMUQXTZOVXIOQYVMSLIA">
+<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174330889-4ba33818-060a-4a68-8358-5d434df60e39.png">
 </p>
 
 ### Update Application
@@ -133,7 +133,7 @@ Then open the terminal and execute `./gradlew :app:run`, notice the website
 contents are also printed.
 
 <p align="center">
-<img width="70%" height="70%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise3/images/website_output.png?token=GHSAT0AAAAAABVU3J6CDSUNUYEJICSFWWZAYVMSLSA">
+<img width="70%" height="70%" src="https://user-images.githubusercontent.com/120980/174330977-494f5958-e164-4d29-b4d9-180cec1bd56d.png">
 </p>
 
 <p align="right">
