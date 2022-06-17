@@ -28,32 +28,32 @@ and select `New --> Module`. Note that `Module` here refers to a Gradle project
 module, not a Gradle dependency module.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module.png?token=GHSAT0AAAAAABVU3J6CDI5EXFOSZZRFCTJ4YVMSMFQ">
 </p>
 
 Select `Gradle` with `Java` and `Kotlin DSL build script` options. Click
 on the `Next` button.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module2.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module2.png?token=GHSAT0AAAAAABVU3J6DZXN7733V3MTJNSK2YVMSMQA">
 </p>
 
 Leave the parent as `Lab` and enter `model` for the name. Click on the
 `Finish` button.
 
 <p align="center">
-<img width="30%" height="30%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module3.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="30%" height="30%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module3.png?token=GHSAT0AAAAAABVU3J6CXZYMOLXWXS4KR43UYVMSM2A">
 </p>
 
 Give the IDE a minute, once it's done you will see the `model` project added.
 Inspect the `settings.gradle.kts` file and notice the project added there too.
 
 <p align="center">
-<img width="30%" height="30%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module4.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="30%" height="30%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module4.png?token=GHSAT0AAAAAABVU3J6DSQ5DRNUQ7GVXEQQIYVMSNEA">
 </p>
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module5.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module5.png?token=GHSAT0AAAAAABVU3J6DJYJEAT7LSXJWMFHAYVMSNMQ">
 </p>
 
 Open the `model/build.gradle.kts` file and add a dependency for
@@ -61,29 +61,29 @@ Open the `model/build.gradle.kts` file and add a dependency for
 elephant icon to refresh the configs.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module6.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module6.png?token=GHSAT0AAAAAABVU3J6D7IAY2TCQBL5UQQGQYVMSNZQ">
 </p>
 
 Now add the `com.gradle.lab` package to the model project by right-clicking
 the `java` folder under `model/src/main` and selecting `New --> Package`.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module7.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module7.png?token=GHSAT0AAAAAABVU3J6DGY45QMYWYJHHB4KUYVMSODQ">
 </p>
 
 <p align="center">
-<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module8.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module8.png?token=GHSAT0AAAAAABVU3J6CLT7YDTQ6REVHM5SIYVMSOOA">
 </p>
 
 Now add a Java class named `AppModel` under the package by right-clicking
 the `com.gradle.lab` package and selecting `New --> Java Class`.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module9.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module9.png?token=GHSAT0AAAAAABVU3J6D6JUNGKZ2HFKMLIHIYVMSOWQ">
 </p>
 
 <p align="center">
-<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module10.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/add_module10.png?token=GHSAT0AAAAAABVU3J6DFHI2OMBKCLNIKCR6YVMSO7A">
 </p>
 
 Open the `AppModel.java` file and *copy* the getter methods from `App.java` to
@@ -112,7 +112,7 @@ Update the `app/build.gradle.kts` to include the `:model` project as a
 dependency. Click on the Gradle elephant icon to refresh the configs.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/proj_dep.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/proj_dep.png?token=GHSAT0AAAAAABVU3J6DUWN2EJZO2KKWEE3MYVMSPIQ">
 </p>
 
 In `App.java` do the following:
@@ -169,11 +169,11 @@ This location for shared configuration is the `buildSrc` folder.
 First create a folder under the root called `buildSrc/src/main/kotlin`.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/buildsrc1.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/buildsrc1.png?token=GHSAT0AAAAAABVU3J6CKLRZQAX5X5RDNFHOYVMSPTQ">
 </p>
 
 <p align="center">
-<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/buildsrc2.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise4/images/buildsrc2.png?token=GHSAT0AAAAAABVU3J6DJGNX6S6CDUOLATXCYVMSP4A">
 </p>
 
 Then create the file `buildSrc/build.gradle.kts` with the following contents:

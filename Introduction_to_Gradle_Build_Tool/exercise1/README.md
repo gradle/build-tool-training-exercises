@@ -95,13 +95,13 @@ drwxr-xr-x  4 adayal  staff   128 May 12 06:38 app
 Launch IntelliJ and open the `settings.gradle` file as a project.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise1/images/open_in_ide.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise1/images/open_in_ide.png?token=GHSAT0AAAAAABVU3J6CT7BBDDJ5SYN3C5UWYVMR4QQ">
 </p>
 
 If asked to trust the file, say yes.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise1/images/ide_trust_project.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise1/images/ide_trust_project.png?token=GHSAT0AAAAAABVU3J6D3JYZQ7M2H2E4AYRCYVMR5EQ">
 </p>
 
 Look at the following files:
@@ -113,7 +113,7 @@ In the `app/build.gradle.kts` file hover over the `mavenCentral()` word and
 notice the help tooltip popup.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise1/images/ide_tooltip.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise1/images/ide_tooltip.png?token=GHSAT0AAAAAABVU3J6D6B27TBOBZA7L2JHWYVMR5RA">
 </p>
 
 Notice sample sources and tests have been created:
@@ -121,7 +121,7 @@ Notice sample sources and tests have been created:
 * `app/src/test/java/com/gradle/lab/AppTest.java`
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise1/images/sample_app.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise1/images/sample_app.png?token=GHSAT0AAAAAABVU3J6DVRBFCLBQNGHK5AYIYVMR55A">
 </p>
 
 ---
