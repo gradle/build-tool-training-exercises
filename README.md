@@ -1,7 +1,7 @@
 ## Gradle Build Tool - Exercises for Live Instructor-Led Training Sessions
 
 <p align="left">
-<img width="10%" height="10%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/images/gradle_training_gradient_logo.png">
+<img width="10%" height="10%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/images/gradle_training_gradient_logo.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 This repository has hands-on exercises that are used in the live instructor-led

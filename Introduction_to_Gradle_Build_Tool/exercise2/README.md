@@ -1,7 +1,7 @@
 ## Introduction to Gradle Build Tool - Exercise 2
 
 <p align="left">
-<img width="10%" height="10%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/images/gradle_training_gradient_logo.png">
+<img width="10%" height="10%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/images/gradle_training_gradient_logo.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 This is a hands-on exercise to go along with the
@@ -31,14 +31,14 @@ case `app`. Running tasks under the top level `Tasks` will run the task for
 all projects, if there were more than one.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/gradle_toolbar.png">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/gradle_toolbar.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 Close the Gradle toolbar. Open the `Terminal` tab in the lower toolbar and
 run `./gradlew tasks --all`. Scroll up and explore the tasks.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/terminal_tasks.png">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/terminal_tasks.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 ---
@@ -47,28 +47,28 @@ run `./gradlew tasks --all`. Scroll up and explore the tasks.
 In the tasks list, notice the `run` task under the `Application tasks` group.
 
 <p align="center">
-<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/run_task.png">
+<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/run_task.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 Inspect the file `app/src/main/java/com/gradle/lab/App.java`. Notice the
 `main` method is supposed to print a greeting message.
 
 <p align="center">
-<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/app_file.png">
+<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/app_file.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 Now look at the `application` block in `build.gradle.kts`, notice that the
 `mainClass` is set as the file just viewed.
 
 <p align="center">
-<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/application_block.png">
+<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/application_block.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 In the terminal, execute the `./gradlew :app:run` command. Notice the greeting
 message is printed.
 
 <p align="center">
-<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/execute_run.png">
+<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/execute_run.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 ---
@@ -78,27 +78,27 @@ Open the file `app/src/test/java/com/gradle/lab/AppTest.java` in the IDE.
 Notice there is one test defined.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/apptest.png">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/apptest.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 Open the Gradle toolbar again and open `app/Tasks/verification`. Double-click
 on the `test` task.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/toolbar_test_task.png">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/toolbar_test_task.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 Notice the task run output on the bottom of the IDE.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/toolbar_test_task_console.png">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/toolbar_test_task_console.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 Navigate to `app/build/reports/tests/test` and open the `index.html` in a
 browser.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/toolbar_test_task_report.png">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/toolbar_test_task_report.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 ---
@@ -110,7 +110,7 @@ right side which indicates when the plugin was last updated. Click on the
 `org.barfuin.gradle.taskinfo` plugin.
 
 <p align="center">
-<img width="75%" height="75%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/task_tree_search.png">
+<img width="75%" height="75%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/task_tree_search.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 Copy the `id` line and paste it into the `plugin` section of
@@ -119,7 +119,7 @@ Gradle file. Click on the second icon to have the IDE process the changes to
 the Gradle config.
 
 <p align="center">
-<img width="75%" height="75%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/apply_plugin_and_refresh.png">
+<img width="75%" height="75%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/apply_plugin_and_refresh.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 Open the Gradle toolbar and expand `Tasks/other`. Notice the 3 tasks `tiJson`,
@@ -127,14 +127,14 @@ Open the Gradle toolbar and expand `Tasks/other`. Notice the 3 tasks `tiJson`,
 **Do not run the tasks yet**.
 
 <p align="center">
-<img width="25%" height="25%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/new_tasks.png">
+<img width="25%" height="25%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/new_tasks.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 Go back to the plugin page in the browser. Click on the repository link near
 the top of the page.
 
 <p align="center">
-<img width="50%" height="50%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/repo_link.png">
+<img width="50%" height="50%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/repo_link.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 In the README, notice the author describes how to invoke the tasks. An argument
@@ -143,20 +143,20 @@ Therefore it is easier to run the task in the terminal where you can easily
 pass arguments.
 
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/usage1.png">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/usage1.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/usage2.png">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/usage2.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 <p align="center">
-<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/usage3.png">
+<img width="60%" height="60%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/usage3.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 Open the terminal in the IDE in the lower toolbar. Run `./gradlew tiTree test`
 to see the dependencies for the test task.
 
 <p align="center">
-<img width="75%" height="75%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/tiTree.png">
+<img width="75%" height="75%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/tiTree.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 ---
@@ -182,13 +182,13 @@ tasks.register("testWithMsg") {
 Once finished be sure to refresh the Gradle configs in the IDE.
 
 <p align="center">
-<img width="50%" height="50%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/refresh_ide.png">
+<img width="50%" height="50%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/refresh_ide.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 Now run the `testWithMsg` task and see it run tests and print the message.
 
 <p align="center">
-<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/tests_with_msg_output.png">
+<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/tests_with_msg_output.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 You can refer to the [Solution](solution/app/build.gradle.kts#L38) if you
@@ -223,13 +223,13 @@ tasks.named("test") {
 Once finished be sure to refresh the Gradle configs in the IDE.
 
 <p align="center">
-<img width="50%" height="50%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/refresh_ide2.png">
+<img width="50%" height="50%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/refresh_ide2.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 Now run the `test` task and see it run tests and print the message.
 
 <p align="center">
-<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/msg_after_test_output.png">
+<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/msg_after_test_output.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 You can refer to the [Solution](solution/app/build.gradle.kts#L48) if you
@@ -242,7 +242,7 @@ folder. *Note*: We only want to copy the one XML file, not the `binary`
 directory.
 
 <p align="center">
-<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/xml_report.png">
+<img width="40%" height="40%" src="https://raw.githubusercontent.com/gradle/build-tool-training-exercises/main/Introduction_to_Gradle_Build_Tool/exercise2/images/xml_report.png?token=GHSAT0AAAAAABVU3J6DGXHUPJ36DX223GMYYVMRJZQ">
 </p>
 
 Refer to the [Copy Task docs](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Copy.html)
