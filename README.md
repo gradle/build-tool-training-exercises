@@ -8,7 +8,7 @@ through them without the training may be difficult. So if you are interested in
 a particular topic you can sign up for a session using the following link:
 
 <p align="center">
-<a style="font-size: 28px" href="https://gradle.com/training/">https://gradle.com/training/</a>
+<a href="https://gradle.com/training/">https://gradle.com/training/</a>
 </p>
 
 ---
@@ -16,3 +16,4 @@ a particular topic you can sign up for a session using the following link:
 Below are the links to exercises for the different training sessions.
 
 * [**Introduction to Gradle Build Tool**](Introduction_to_Gradle_Build_Tool/)
+* [**Gradle Build Cache Deep Dive**](Gradle_Build_Cache_Deep_Dive/)
