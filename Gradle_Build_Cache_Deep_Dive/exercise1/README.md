@@ -29,7 +29,7 @@ you will go over the following:
 Open the Gradle project in the `lab` folder. You can either open a terminal
 and go to the folder, or open the project in an editor such as IntelliJ.
 
-Inspect the build and source files, there is only one subproject called `app1`.
+Inspect the build and source files, there is only one subproject called `app`.
 The `gradle.properties` file has a property so verbose console logging will be
 enabled. You may notice `app/build.gradle.kts` has a task called
 `generateLocalUniqueValue`, ignore it for now. We will cover this later in the
@@ -230,6 +230,3 @@ $ ./gradlew :app:clean :app:test
 It is important to understand that the outputs from the cache are put into
 the build directory and that's how the outputs are available to the tasks.
 
-<p align="right">
-<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Gradle_Build_Cache_Deep_Dive/exercise2">Exercise 2 >></a>
-</p>

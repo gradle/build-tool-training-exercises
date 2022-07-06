@@ -6,6 +6,8 @@
  * User Manual available at https://docs.gradle.org/7.4.2/userguide/building_java_projects.html
  */
 
+import kotlin.random.Random
+
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application

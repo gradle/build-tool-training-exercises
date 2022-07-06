@@ -182,6 +182,3 @@ which caused the cache miss.
 <img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/177334631-5c94bbc3-5279-4fee-b202-ab4dc0599e17.png">
 </p>
 
-<p align="right">
-<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Gradle_Build_Cache_Deep_Dive/exercise3">Exercise 3 >></a>
-</p>
