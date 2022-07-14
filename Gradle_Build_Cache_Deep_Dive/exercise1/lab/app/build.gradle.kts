@@ -41,15 +41,15 @@ This just guarantees that everyone running the lab pushes their own changes
 into the remote cache, rather than getting hits from someone else's run.
  */
 tasks.register("generateLocalUniqueValue") {
-    val outputFile = layout.projectDirectory.file("local.txt").asFile
+    val outputFile = layout.projectDirectory.file("local.txt")
     onlyIf {
-        !outputFile.exists()
+        !outputFile.asFile.exists()
     }
     outputs.file(outputFile)
     doLast {
         val bytes = ByteArray(20)
         Random.nextBytes(bytes)
-        outputFile.writeBytes(bytes)
+        outputFile.asFile.writeBytes(bytes)
     }
 }
 listOf("compileJava", "compileTestJava", "test").forEach{
