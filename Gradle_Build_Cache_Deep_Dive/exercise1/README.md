@@ -230,3 +230,6 @@ $ ./gradlew :app:clean :app:test
 It is important to understand that the outputs from the cache are put into
 the build directory and that's how the outputs are available to the tasks.
 
+<p align="right">
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Gradle_Build_Cache_Deep_Dive/exercise2">Exercise 2 >></a>
+</p>
