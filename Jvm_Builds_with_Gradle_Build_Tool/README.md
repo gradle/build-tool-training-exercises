@@ -12,3 +12,7 @@ The exercises are progressive, each one building upon the previous. You can
 continue to use the same workspace throughout the exercises. If you prefer
 to use a different workspace for each one, there are Gradle projects provided
 in the `lab` folders in each exercise.
+
+<p align="right">
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Jvm_Builds_with_Gradle_Build_Tool/exercise1">Exercise 1 >></a>
+</p>
