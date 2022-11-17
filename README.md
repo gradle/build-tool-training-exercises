@@ -17,3 +17,4 @@ Below are the links to exercises for the different training sessions.
 
 * [**Introduction to Gradle Build Tool**](Introduction_to_Gradle_Build_Tool/)
 * [**Gradle Build Cache Deep Dive**](Gradle_Build_Cache_Deep_Dive/)
+* [**Jvm Builds with Gradle Build Tool**](Jvm_Builds_with_Gradle_Build_Tool/)
