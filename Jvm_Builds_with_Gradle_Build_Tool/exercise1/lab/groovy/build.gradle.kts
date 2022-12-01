@@ -29,7 +29,7 @@ application {
     mainClass.set("com.gradle.lab.App")
 }
 
-tasks.named<Test>("test") {
+tasks.withType<Test> {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }

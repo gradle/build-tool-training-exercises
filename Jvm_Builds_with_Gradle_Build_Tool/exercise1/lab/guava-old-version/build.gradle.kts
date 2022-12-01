@@ -15,7 +15,7 @@ dependencies {
     implementation("com.google.guava:guava:25.1-jre")
 }
 
-tasks.named<Test>("test") {
+tasks.withType<Test> {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
