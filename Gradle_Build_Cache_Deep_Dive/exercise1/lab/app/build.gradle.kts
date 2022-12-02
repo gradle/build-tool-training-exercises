@@ -52,7 +52,7 @@ tasks.register("generateLocalUniqueValue") {
         outputFile.asFile.writeBytes(bytes)
     }
 }
-listOf("compileJava", "compileTestJava", "test").forEach{
+listOf("compileJava", "compileTestJava", "test").forEach {
     tasks.named(it) {
         inputs.files(tasks.named("generateLocalUniqueValue"))
                 .withPathSensitivity(PathSensitivity.NONE)
