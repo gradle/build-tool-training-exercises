@@ -90,7 +90,7 @@ buildCache {
 ```
 
 The instructor will provide the credentials. You can export them as environment
-variables. Be sure to use single quotes for the values:
+variables. **Be sure to use single quotes for the values**:
 
 ```bash
 export CACHE_USERNAME='someuser'
