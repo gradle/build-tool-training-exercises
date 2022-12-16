@@ -32,10 +32,6 @@ buildCache {
     remote<HttpBuildCache> {
         url = uri("https://enterprise-training.gradle.com/cache/")
         isPush = true
-        credentials {
-            username = System.getenv("CACHE_USERNAME")
-            password = System.getenv("CACHE_PASSWORD")
-        }
     }
 }
 ```
@@ -81,29 +77,18 @@ buildCache {
   remote<HttpBuildCache> {
     url = uri("https://enterprise-training.gradle.com/cache/")
     isPush = true
-    credentials {
-      username = System.getenv("CACHE_USERNAME")
-      password = System.getenv("CACHE_PASSWORD")
-    }
   }
 }
 ```
 
-The instructor will provide the credentials. You can export them as environment
-variables. **Be sure to use single quotes for the values**:
-
-```bash
-export CACHE_USERNAME='someuser'
-export CACHE_PASSWORD='somepassword'
-```
-
-To use the build scan feature we need to provision an access key, run:
+To get an access key to the remote cache run:
 
 ```bash
 $ ./gradlew :provisionGradleEnterpriseAccessKey
 ```
 
-Open the link and follow the steps to provision a key.
+Open the link and follow the steps to provision a key. **Note:** You will have to enter
+credentials to get an access key. The instructor will provide them to you.
 
 ### Use Remote Cache and Compare Scans
 
