@@ -1,0 +1,11 @@
+[versions]
+json = "20220924"
+guice = "5.1.0"
+checker-qual = "3.28.0"
+
+[libraries]
+json = { module = "org.json:json", version.ref = "json" }
+guava = { module = "com.google.guava:guava", version = { strictly = "[28.0-jre, 30.0-jre]", prefer="29.0-jre" } }
+guava-constraints = { module = "com.google.guava:guava", version = { strictly = "[28.0-jre, 28.5-jre]" } }
+guice = { module = "com.google.inject:guice", version.ref = "guice" }
+checker-qual = { module = "org.checkerframework:checker-qual", version.ref = "checker-qual" }
