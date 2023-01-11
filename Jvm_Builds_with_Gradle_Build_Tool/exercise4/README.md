@@ -99,6 +99,9 @@ Apply the `shadow` plugin to the `guava-old-version` subproject.
 You can refer to the
 [plugin portal](https://plugins.gradle.org/plugin/com.github.johnrengelman.shadow).
 
+If you get stuck you can refer to the
+[solution](solution/guava-old-version/build.gradle.kts).
+
 **Note:** You may not need to specify a version for the plugin just like before.
 
 Add configuration in the subproject to relocate the `com.google.common` package.
@@ -109,6 +112,8 @@ as well as [this example](https://github.com/johnrengelman/shadow/issues/484)
 Now update the dependency to `guava-old-version` to use the `shadow` configuration
 as per the
 [official documentation](https://imperceptiblethoughts.com/shadow/multi-project/#depending-on-the-shadow-jar-from-another-project).
+If you get stuck you can refer to the
+[solution](solution/buildSrc/src/main/kotlin/shared-build-conventions.gradle.kts#L18).
 
 Now execute the `run` task and notice it works now:
 
