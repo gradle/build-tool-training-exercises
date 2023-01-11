@@ -19,7 +19,13 @@ you will get familiar with the following topics:
 ---
 ### Run the Existing Jar
 
-Look under `<subproject>/build/libs` and notice there is a jar file.
+Ensure the jar is created for your project by running:
+
+```bash
+./gradlew :<subproject>:jar
+```
+
+Look under `<subproject>/build/libs` and notice the jar file.
 
 <p align="center">
 <img width="30%" height="30%" src="https://user-images.githubusercontent.com/120980/189362450-e5d49201-d357-47f8-8ff5-2ff1bf2edadb.png">
