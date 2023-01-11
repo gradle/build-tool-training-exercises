@@ -52,6 +52,8 @@ testing {
 
 *Hint:* You can refer to the
 [JVM test suite documentation](https://docs.gradle.org/current/userguide/jvm_test_suite_plugin.html#configure_source_directories_of_a_test_suite).
+If you get stuck you can refer to the
+[solution](solution/buildSrc/src/main/kotlin/shared-build-conventions.gradle.kts#L102).
 
 Verify a new `SourceSet` has been created for the suite:
 
@@ -118,6 +120,8 @@ Now add a rule to enforce that line coverage should be at least 70%.
 
 *Hint:* Refer to the
 [jacoco documentation](https://docs.gradle.org/current/userguide/jacoco_plugin.html#sec:jacoco_report_violation_rules).
+If you get stuck you can refer to the
+[solution](solution/buildSrc/src/main/kotlin/shared-build-conventions.gradle.kts#L112).
 
 Run the `check` task again and watch the build fail due to insufficient
 coverage.
