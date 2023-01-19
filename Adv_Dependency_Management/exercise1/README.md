@@ -9,7 +9,7 @@ This is a hands-on exercise to go along with the
 you will go over the following:
 
 * `Bucket` vs `Resolved` dependency configurations
-* Impact of `api` vs `implementation` dependency configurations on upstream projects
+* Impact of `api` vs `implementation` dependency configurations on downstream projects
 
 ---
 ### Prerequisites
@@ -95,7 +95,7 @@ does not.
 
 This is because `guava` was in the `implementation` dependency
 configuration of the `model` subproject, an indication to Gradle that
-it's not needed for compilation for upstream projects.
+it's not needed for compilation for downstream projects.
 
 <p align="center">
 <img width="75%" height="75%" src="https://user-images.githubusercontent.com/120980/200845540-aad80126-9397-45f8-befc-142003753682.png">
