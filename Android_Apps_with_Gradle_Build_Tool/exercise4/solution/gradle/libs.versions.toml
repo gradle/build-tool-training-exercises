@@ -1,0 +1,28 @@
+[versions]
+android-material = "1.8.0"
+# Plugin versions
+android-plugin = "7.4.1"
+jacocolog = "3.1.0"
+kotlin-android = "1.8.0"
+
+[libraries]
+# Just to show how to use version.ref in libraries
+android-material = { module = "com.google.android.material:material", version.ref = "android-material" }
+androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
+androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
+androidx-core-kts = "androidx.core:core-ktx:1.7.0"
+androidx-test-espresso = "androidx.test.espresso:espresso-core:3.5.1"
+androidx-test-junit = "androidx.test.ext:junit:1.1.5"
+exp4j = "net.objecthunter:exp4j:0.4.8"
+jacoco-log = { module = "org.barfuin.gradle.jacocolog:org.barfuin.gradle.jacocolog.gradle.plugin", version.ref = "jacocolog" }
+android-library = { module = "com.android.library:com.android.library.gradle.plugin",  version.ref = "android-plugin" }
+kotlin-android = { module = "org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin", version.ref = "kotlin-android" }
+
+[bundles]
+androidx-tests = ["androidx-test-junit", "androidx-test-espresso"]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android-plugin" }
+android-library = { id = "com.android.library", version.ref = "android-plugin" }
+jacocolog = { id = "org.barfuin.gradle.jacocolog", version.ref = "jacocolog" }
+kotlin-android = { id = "org.jetbrains.kotlin.android" , version.ref = "kotlin-android" }

@@ -19,3 +19,4 @@ Below are the links to exercises for the different training sessions.
 * [**Gradle Build Cache Deep Dive**](Gradle_Build_Cache_Deep_Dive/)
 * [**Jvm Builds with Gradle Build Tool**](Jvm_Builds_with_Gradle_Build_Tool/)
 * [**Advanced Dependency Management**](Adv_Dependency_Management/)
+* [**Android Apps with Gradle Build Tool**](Android_Apps_with_Gradle_Build_Tool/)

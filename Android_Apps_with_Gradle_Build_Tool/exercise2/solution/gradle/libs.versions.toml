@@ -1,0 +1,21 @@
+[versions]
+android-material = "1.8.0"
+# Plugin versions
+android-plugin = "7.4.1"
+
+[libraries]
+# Just to show how to use version.ref in libraries
+android-material = { module = "com.google.android.material:material", version.ref = "android-material" }
+androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
+androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
+androidx-core-kts = "androidx.core:core-ktx:1.7.0"
+androidx-test-espresso = "androidx.test.espresso:espresso-core:3.5.1"
+androidx-test-junit = "androidx.test.ext:junit:1.1.5"
+
+[bundles]
+androidx-tests = ["androidx-test-junit", "androidx-test-espresso"]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android-plugin" }
+android-library = { id = "com.android.library", version.ref = "android-plugin" }
+kotlin-android = { id = "org.jetbrains.kotlin.android" , version = "1.8.0" }
