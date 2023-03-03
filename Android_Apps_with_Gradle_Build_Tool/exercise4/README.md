@@ -76,8 +76,8 @@ dependencies {
 <img width="75%" height="75%" src="https://user-images.githubusercontent.com/120980/220099752-b5edb691-1f19-4ecb-bd5f-a43af43798b0.png">
 </p>
 
-* Add a blank fragment called `CalcFragment`
 * Add a `drawable` file called [borderbottom.xml](../exercise3/solution/feature/calc/src/main/res/drawable/borderbottom.xml)
+* Add a blank fragment called `CalcFragment`
 
 <p align="center">
 <img width="75%" height="75%" src="https://user-images.githubusercontent.com/120980/220098707-862c64e9-3aea-4615-9c40-8e0ace29dace.png">
