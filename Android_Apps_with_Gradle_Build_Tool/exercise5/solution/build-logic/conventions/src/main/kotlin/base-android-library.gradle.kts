@@ -35,6 +35,8 @@ dependencies {
     implementation(libs.findLibrary("androidx.appcompat").get())
     implementation(libs.findLibrary("androidx.constraintlayout").get())
     implementation(libs.findLibrary("android.material").get())
+    
+    testImplementation(libs.findLibrary("junit").get())
 
     androidTestImplementation(libs.findBundle("androidx.tests").get())
 }
