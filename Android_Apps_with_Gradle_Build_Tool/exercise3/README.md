@@ -22,7 +22,8 @@ At the end of this exercise you will have the math modules ready.
 ### Adding new dependency to version catalog
 
 We will make use of [exp4j](https://en.wikipedia.org/wiki/Exp4j) to
-evaluate calculations. Add this dependency to the version catalog.
+evaluate calculations. Add this dependency to the version catalog, which we can get from
+[Maven Central](https://mvnrepository.com/artifact/net.objecthunter/exp4j)
 
 ```text
 exp4j = "net.objecthunter:exp4j:0.4.8"
