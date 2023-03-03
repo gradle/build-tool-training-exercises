@@ -37,6 +37,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(project(":math:calc"))
     implementation(project(":math:game"))
+    
+    testImplementation(libs.junit)
 
     androidTestImplementation(libs.bundles.androidx.tests)
 }
