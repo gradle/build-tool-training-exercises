@@ -41,7 +41,7 @@ you get stuck you can reference the [solution](solution/build-logic/settings.gra
 ### Create conventions sub-project
 
 Under the `build-logic` directory, create a `conventions` directory. Put a
-`build.gradle.kts` file there. It should have 3 sections:
+`build.gradle.kts` file there. It should have 2 sections:
 
 * Apply `kotlin-dsl` plugin
 * Add `implementation` dependency on jacocolog and android library using the version catalog
