@@ -9,9 +9,8 @@ This is a hands-on exercise to go along with the
 you will go over the following:
 
 * Create modules for features
-* Add UI elements
 
-At the end of this exercise you will have a fully working app.
+At the end of this exercise you will have the math modules ready.
 
 ---
 ### Prerequisites
@@ -36,6 +35,10 @@ plugin for showing more test coverage information.
 jacocolog = { id = "org.barfuin.gradle.jacocolog", version = "3.1.0" }
 ```
 
+You can refer to the full
+[version catalog in the solution](solution/gradle/libs.versions.toml)
+if you get stuck.
+
 ---
 ### :math:calc module
 
@@ -49,7 +52,134 @@ the calculator fragment.
 </p>
 
 * Update the contents of the [build.gradle.kts](solution/math/calc/build.gradle.kts) to include `exp4j` dependency, java toolchain and test coverage configuration
-* Add code for [Calc.kt](solution/math/calc/src/main/java/com/gradle/lab/calc/Calc.kt) and [CalcTest.kt](solution/math/calc/src/test/java/com/gradle/lab/calc/CalcTest.kt)
+
+```kotlin
+plugins {
+    id("java-library")
+    id("org.jetbrains.kotlin.jvm")
+    id("jacoco")
+    alias(libs.plugins.jacocolog)
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
+
+dependencies {
+    implementation(libs.exp4j)
+
+    testImplementation(kotlin("test"))
+}
+
+tasks.named<JacocoReport>("jacocoTestReport") {
+    dependsOn(tasks.named("test"))
+    reports {
+        xml.required.set(true)
+    }
+}
+tasks.named<JacocoCoverageVerification>("jacocoTestCoverageVerification") {
+    violationRules {
+        rule {
+            limit {
+                counter = "LINE"
+                value = "COVEREDRATIO"
+                minimum = "0.5".toBigDecimal()
+            }
+        }
+    }
+}
+tasks.named("check") {
+    dependsOn("jacocoTestCoverageVerification")
+}
+```
+
+* Add code for [Calc.kt](solution/math/calc/src/main/java/com/gradle/lab/calc/Calc.kt)
+
+```kotlin
+package com.gradle.lab.calc
+
+import net.objecthunter.exp4j.Expression
+import net.objecthunter.exp4j.ExpressionBuilder
+import java.util.regex.Pattern
+
+object Calc {
+
+    private const val ZERO_STRING = "0+"
+    private val ZERO_PATTERN = Pattern.compile(ZERO_STRING)
+
+    fun isZeroString(str: String?): Boolean {
+        if (str == null) {
+            return false
+        }
+
+        val matcher = ZERO_PATTERN.matcher(str.trim())
+
+        return matcher.matches()
+    }
+
+    fun evalExpression(expressionStr: String?): String? {
+        return try {
+            val expression: Expression = ExpressionBuilder(expressionStr).build()
+            var result = expression.evaluate().toString()
+
+            // Remove trailing .0 if its there.
+            if (result.endsWith(".0")) {
+                result = result.substring(0, result.length - 2)
+            }
+
+            result
+        } catch (ex: Exception) {
+            null
+        }
+    }
+}
+```
+
+* Add code for [CalcTest.kt](solution/math/calc/src/test/java/com/gradle/lab/calc/CalcTest.kt)
+
+```kotlin
+package com.gradle.lab.calc
+
+import com.gradle.lab.calc.Calc.evalExpression
+import com.gradle.lab.calc.Calc.isZeroString
+
+import kotlin.test.Test
+import kotlin.test.assertEquals
+import kotlin.test.assertFalse
+import kotlin.test.assertNull
+import kotlin.test.assertTrue
+
+class CalcTest {
+
+    @Test
+    fun zerostring_null() {
+        assertFalse(isZeroString(null), "null should return false")
+    }
+
+    @Test
+    fun zerostring_zeros() {
+        assertTrue(isZeroString("0000"), "0000 should return true")
+        assertTrue(isZeroString("  0000  "), "0000 with whitespace should return true")
+    }
+
+    @Test
+    fun zerostring_other() {
+        assertFalse(isZeroString("0000."), "other text should return false")
+        assertFalse(isZeroString("5+0"), "other text should return false")
+    }
+
+    @Test
+    fun eval_good() {
+        assertEquals("5", evalExpression("2+3"))
+        assertEquals("2", evalExpression("5-3"))
+        assertEquals("6", evalExpression("2*3"))
+        assertEquals("3", evalExpression("9/3"))
+        assertNull(evalExpression("2+3*"), "invalid input")
+    }
+}
+```
 
 ---
 ### :math:game module
@@ -59,60 +189,167 @@ the game fragment.
 
 * Add a kotlin library module called `:math:game` with a `Game` class
 * Update the contents of the [build.gradle.kts](solution/math/game/build.gradle.kts) to include java toolchain and test coverage configuration
-* Add code for [Game.kt](solution/math/game/src/main/java/com/gradle/lab/game/Game.kt) and [GameTest.kt](solution/math/game/src/test/java/com/gradle/lab/game/GameTest.kt)
+
+```kotlin
+plugins {
+    id("java-library")
+    id("org.jetbrains.kotlin.jvm")
+    id("jacoco")
+    alias(libs.plugins.jacocolog)
+}
+
+java {
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(11))
+    }
+}
+
+dependencies {
+    testImplementation(kotlin("test"))
+}
+
+tasks.named<JacocoReport>("jacocoTestReport") {
+    dependsOn(tasks.named("test"))
+    reports {
+        xml.required.set(true)
+    }
+}
+tasks.named<JacocoCoverageVerification>("jacocoTestCoverageVerification") {
+    violationRules {
+        rule {
+            limit {
+                counter = "LINE"
+                value = "COVEREDRATIO"
+                minimum = "0.5".toBigDecimal()
+            }
+        }
+    }
+}
+tasks.named("check") {
+    dependsOn("jacocoTestCoverageVerification")
+}
+```
+
+* Add code for [Game.kt](solution/math/game/src/main/java/com/gradle/lab/game/Game.kt)
+
+```kotlin
+package com.gradle.lab.game
+
+import java.util.*
+
+object Game {
+
+    private val RANDOM = Random()
+
+    fun generateNextQuestion(): String {
+        val type = RANDOM.nextInt(3)
+
+        val question = when (type) {
+            0 -> generateAddQuestion()
+            1 -> generateSubtractionQuestion()
+            else -> generateMultiplyQuestion()
+        }
+
+        return question
+    }
+
+    /**
+     * Generate an addition question with 2 numbers.
+     */
+    fun generateAddQuestion(): String {
+        val firstNumber = RANDOM.nextInt(990) + 11
+        val secondNumber = RANDOM.nextInt(990) + 11
+        return "$firstNumber+$secondNumber"
+    }
+
+    /**
+     * Generate a subtraction question with 2 numbers.
+     */
+    fun generateSubtractionQuestion(): String {
+        val firstNumber = RANDOM.nextInt(950) + 51
+        val secondNumber = RANDOM.nextInt(firstNumber - 20) + 11
+        return "$firstNumber-$secondNumber"
+    }
+
+    /**
+     * Generate a multiplication question with 2 numbers.
+     */
+    fun generateMultiplyQuestion(): String {
+        val firstNumber = RANDOM.nextInt(27) + 4
+        val secondNumber = RANDOM.nextInt(27) + 4
+        return "$firstNumber*$secondNumber"
+    }
+}
+```
+
+* Add code for [GameTest.kt](solution/math/game/src/test/java/com/gradle/lab/game/GameTest.kt)
+
+```kotlin
+package com.gradle.lab.game
+
+import java.util.regex.Pattern
+
+import kotlin.test.Test
+import kotlin.test.assertNotNull
+import kotlin.test.assertTrue
+
+class GameTest {
+
+    @Test
+    fun generateNextQuestion() {
+        assertNotNull(Game.generateAddQuestion(), "should return question")
+    }
+
+    @Test
+    fun generateAddQuestion() {
+        val question = Game.generateAddQuestion()
+        val regex = "[0-9]+\\+[0-9]+"
+        val pattern = Pattern.compile(regex)
+        val matcher = pattern.matcher(question)
+        assertTrue(matcher.matches(), "should match regex")
+    }
+
+    @Test
+    fun generateSubtractionQuestion() {
+        val question = Game.generateSubtractionQuestion()
+        val regex = "[0-9]+-[0-9]+"
+        val pattern = Pattern.compile(regex)
+        val matcher = pattern.matcher(question)
+        assertTrue(matcher.matches(), "should match regex")
+    }
+
+    @Test
+    fun generateMultiplyQuestion() {
+        val question = Game.generateMultiplyQuestion()
+        val regex = "[0-9]+\\*[0-9]+"
+        val pattern = Pattern.compile(regex)
+        val matcher = pattern.matcher(question)
+        assertTrue(matcher.matches(), "should match regex")
+    }
+}
+```
 
 ---
-### :feature:calc module
+### Run Test Coverage Report
 
-This module will provide the fragment for the calculator part of the app.
+Run the task `jacocoTestReport` and observe the coverage output:
 
-* Add an android library module called `:feature:calc`.
-* Update the contents of the [build.gradle.kts](solution/feature/calc/build.gradle.kts) to use the version catalog, JDK 11 and dependency on `:math:calc`
-* Add a vector for `backspace`
+```bash
+> Task :math:calc:jacocoLogTestCoverage
+Test Coverage:
+    - Class Coverage: 100%
+    - Method Coverage: 100%
+    - Branch Coverage: 75%
+    - Line Coverage: 100%
+    - Instruction Coverage: 100%
+    - Complexity Coverage: 80%
 
-<p align="center">
-<img width="75%" height="75%" src="https://user-images.githubusercontent.com/120980/220099752-b5edb691-1f19-4ecb-bd5f-a43af43798b0.png">
-</p>
-
-* Add a `drawable` file called [borderbottom.xml](solution/feature/calc/src/main/res/drawable/borderbottom.xml)
-* Add a blank fragment called `CalcFragment`
-
-<p align="center">
-<img width="75%" height="75%" src="https://user-images.githubusercontent.com/120980/220098707-862c64e9-3aea-4615-9c40-8e0ace29dace.png">
-</p>
-
-* Add code for [CalcFragment.kt](solution/feature/calc/src/main/java/com/gradle/lab/calc/CalcFragment.kt), [fragment_calc.xml](solution/feature/calc/src/main/res/layout/fragment_calc.xml) and [strings.xml](solution/feature/calc/src/main/res/values/strings.xml)
-
----
-### :feature:game module
-
-This module will provide the fragment for the calculator part of the app.
-
-* Add an android library module called `:feature:game`.
-* Update the contents of the [build.gradle.kts](solution/feature/game/build.gradle.kts) to use the version catalog, JDK 11 and dependency on `:math:calc` and `:math:game`
-* Add a vector for `send`
-* Add a blank fragment called `GameFragment`
-* Add code for [GameFragment.kt](solution/feature/game/src/main/java/com/gradle/lab/game/GameFragment.kt), [fragment_game.xml](solution/feature/game/src/main/res/layout/fragment_game.xml) and [strings.xml](solution/feature/game/src/main/res/values/strings.xml)
-
----
-### Update :app module
-
-Now let's update the `app` module to use the other modules we've added.
-
-* Update the [app/build.gradle.kts](solution/app/build.gradle.kts) with feature dependencies
-* Add calculate vector
-* Add videogame asset vector
-* Add a `Android Resource File` of type `menu` called `bottom_nav_menu` and put the [following contents](solution/app/src/main/res/menu/bottom_nav_menu.xml) in it
-
-<p align="center">
-<img width="75%" height="75%" src="https://user-images.githubusercontent.com/120980/220099390-79e8288c-095b-4c39-9197-b7e26c59933b.png">
-</p>
-<p align="center">
-<img width="50%" height="50%" src="https://user-images.githubusercontent.com/120980/220099555-c6b020f1-38e1-49d2-938f-b4c368b72e20.png">
-</p>
-
-* Update the contents of [activity_main.xml](solution/app/src/main/res/layout/activity_main.xml)
-* Update the contents of [MainActivity.kt](solution/app/src/main/java/com/gradle/lab/mycalculator/MainActivity.kt)
-
-
-Press the `Gradle sync` button. You can now run the app and play with it.
+> Task :math:game:jacocoLogTestCoverage
+Test Coverage:
+    - Class Coverage: 100%
+    - Method Coverage: 80%
+    - Branch Coverage: 0%
+    - Line Coverage: 62.5%
+    - Instruction Coverage: 77.6%
+    - Complexity Coverage: 57.1%
+```

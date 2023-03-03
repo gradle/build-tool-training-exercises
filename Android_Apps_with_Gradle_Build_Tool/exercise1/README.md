@@ -48,7 +48,50 @@ Rename the following .gradle files to .gradle.kts:
 Update the configurations from the Groovy configuration files and convert as per:
 https://developer.android.com/studio/build/migrate-to-kts.
 
+<u>settings.gradle.kts</u>
+
+```kotlin
+include(":app")
+```
+
+<u>build.gradle.kts</u>
+
+```kotlin
+plugins {
+  id("com.android.application") version "7.4.1" apply false
+  id("com.android.library") version "7.4.1" apply false
+  id("org.jetbrains.kotlin.android") version "1.8.0" apply false
+}
+```
+
+<u>app/build.gradle.kts</u>
+
+```kotlin
+plugins {
+  id("com.android.application")
+  id("org.jetbrains.kotlin.android")
+}
+
+android {
+  namespace = "com.gradle.lab.mycalculator"
+  compileSdk = 33
+  ...
+  buildTypes {
+    release {
+      isMinifyEnabled = false
+      proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+    }
+  }
+  ...
+
+```
+
 Update the JDK version to 11 in `app/build.gradle.kts`.
+
+```kotlin
+sourceCompatibility = JavaVersion.VERSION_11
+targetCompatibility = JavaVersion.VERSION_11
+```
 
 Click on the `Sync Gradle`button in Android Studio to ensure things are
 correctly configured. If there is an issue refer to the
