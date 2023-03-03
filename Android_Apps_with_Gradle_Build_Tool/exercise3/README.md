@@ -93,6 +93,9 @@ tasks.named<JacocoCoverageVerification>("jacocoTestCoverageVerification") {
 tasks.named("check") {
     dependsOn("jacocoTestCoverageVerification")
 }
+tasks.named("check") {
+    dependsOn("jacocoTestReport")
+}
 ```
 
 * Add code for [Calc.kt](solution/math/calc/src/main/java/com/gradle/lab/calc/Calc.kt)
@@ -227,6 +230,9 @@ tasks.named<JacocoCoverageVerification>("jacocoTestCoverageVerification") {
 }
 tasks.named("check") {
     dependsOn("jacocoTestCoverageVerification")
+}
+tasks.named("check") {
+    dependsOn("jacocoTestReport")
 }
 ```
 
