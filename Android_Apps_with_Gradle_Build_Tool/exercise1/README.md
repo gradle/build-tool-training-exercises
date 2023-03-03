@@ -91,6 +91,9 @@ Update the JDK version to 11 in `app/build.gradle.kts`.
 ```kotlin
 sourceCompatibility = JavaVersion.VERSION_11
 targetCompatibility = JavaVersion.VERSION_11
+kotlinOptions {
+    jvmTarget = "11"
+}
 ```
 
 Click on the `Sync Gradle`button in Android Studio to ensure things are
