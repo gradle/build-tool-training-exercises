@@ -24,7 +24,7 @@ At the end of this exercise you will have a fully working app.
 This module will provide the fragment for the calculator part of the app.
 
 * Add an android library module called `:feature:calc`.
-* Update the contents of the [build.gradle.kts](../exercise3/solution/feature/calc/build.gradle.kts) to use the version catalog, JDK 11 and dependency on `:math:calc`
+* Update the contents of the [feature/calc/build.gradle.kts](../exercise3/solution/feature/calc/build.gradle.kts) to use the version catalog, JDK 11 and dependency on `:math:calc`
 
 ```kotlin
 plugins {
@@ -95,7 +95,7 @@ dependencies {
 </layer-list>
 ```
 
-* Add code for [CalcFragment.kt](../exercise3/solution/feature/calc/src/main/java/com/gradle/lab/calc/CalcFragment.kt)
+* Add code for [feature/calc/src/main/java/com/gradle/lab/calc/CalcFragment.kt](../exercise3/solution/feature/calc/src/main/java/com/gradle/lab/calc/CalcFragment.kt)
 
 ```kotlin
 package com.gradle.lab.calc
@@ -202,7 +202,7 @@ class CalcFragment : Fragment() {
 }
 ```
 
-* Add code for [fragment_calc.xml](../exercise3/solution/feature/calc/src/main/res/layout/fragment_calc.xml)
+* Add code for [feature/calc/src/main/res/layout/fragment_calc.xml](../exercise3/solution/feature/calc/src/main/res/layout/fragment_calc.xml)
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -487,7 +487,7 @@ class CalcFragment : Fragment() {
 </RelativeLayout>
 ```
 
-* Add code for [strings.xml](../exercise3/solution/feature/calc/src/main/res/values/strings.xml)
+* Add code for [feature/calc/src/main/res/values/strings.xml](../exercise3/solution/feature/calc/src/main/res/values/strings.xml)
 
 ```xml
 <resources>
@@ -501,7 +501,7 @@ class CalcFragment : Fragment() {
 This module will provide the fragment for the calculator part of the app.
 
 * Add an android library module called `:feature:game`.
-* Update the contents of the [build.gradle.kts](../exercise3/solution/feature/game/build.gradle.kts) to use the version catalog, JDK 11 and dependency on `:math:calc` and `:math:game`
+* Update the contents of the [feature/game/build.gradle.kts](../exercise3/solution/feature/game/build.gradle.kts) to use the version catalog, JDK 11 and dependency on `:math:calc` and `:math:game`
 
 ```kotlin
 plugins {
@@ -550,7 +550,7 @@ dependencies {
 
 * Add a vector for `send`
 * Add a blank fragment called `GameFragment`
-* Add code for [GameFragment.kt](../exercise3/solution/feature/game/src/main/java/com/gradle/lab/game/GameFragment.kt)
+* Add code for [feature/game/src/main/java/com/gradle/lab/game/GameFragment.kt](../exercise3/solution/feature/game/src/main/java/com/gradle/lab/game/GameFragment.kt)
 
 ```kotlin
 package com.gradle.lab.game
@@ -627,7 +627,7 @@ class GameFragment : Fragment() {
 }
 ```
 
-* Add code for [fragment_game.xml](../exercise3/solution/feature/game/src/main/res/layout/fragment_game.xml)
+* Add code for [feature/game/src/main/res/layout/fragment_game.xml](../exercise3/solution/feature/game/src/main/res/layout/fragment_game.xml)
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -710,7 +710,7 @@ class GameFragment : Fragment() {
 </RelativeLayout>
 ```
 
-* Add code for [strings.xml](../exercise3/solution/feature/game/src/main/res/values/strings.xml)
+* Add code for [feature/game/src/main/res/values/strings.xml](../exercise3/solution/feature/game/src/main/res/values/strings.xml)
 
 ```xml
 <resources>
@@ -757,7 +757,7 @@ implementation(project(":feature:game"))
 </menu>
 ```
 
-* Update the contents of [activity_main.xml](../exercise3/solution/app/src/main/res/layout/activity_main.xml)
+* Update the contents of [app/src/main/res/layout/activity_main.xml](../exercise3/solution/app/src/main/res/layout/activity_main.xml)
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -785,7 +785,7 @@ implementation(project(":feature:game"))
 </RelativeLayout>
 ```
 
-* Update the contents of [MainActivity.kt](../exercise3/solution/app/src/main/java/com/gradle/lab/mycalculator/MainActivity.kt)
+* Update the contents of [app/src/main/java/com/gradle/lab/mycalculator/MainActivity.kt](../exercise3/solution/app/src/main/java/com/gradle/lab/mycalculator/MainActivity.kt)
 
 ```kotlin
 package com.gradle.lab.mycalculator
