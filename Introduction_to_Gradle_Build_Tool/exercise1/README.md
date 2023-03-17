@@ -23,7 +23,7 @@ you will get familiar with the following topics:
 ---
 ### Initialize new Gradle Project
 
-Open a terminal and go to the `lab` folder. Initialize a new Gradle
+Open a terminal and create a folder called `lab`, then go inside it. Initialize a new Gradle
 project by running the `gradle init` command and enter the following responses
 for the questions:
 
@@ -92,7 +92,7 @@ drwxr-xr-x  4 adayal  staff   128 May 12 06:38 app
 ---
 ### Open Project in IntelliJ IDE and Explore Files
 
-Launch IntelliJ and open the `settings.gradle` file as a project.
+Launch IntelliJ and open the `settings.gradle.kts` file as a project.
 
 <p align="center">
 <img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174327155-818c016b-3f7b-496d-97c9-2a6ad7e905c3.png">
