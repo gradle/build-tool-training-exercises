@@ -127,7 +127,7 @@ Notice sample sources and tests have been created:
 ---
 ### Gradle Wrapper Distributions
 
-Gradle wrapper distributions are stored in the `.gradle/wrapper/dists` folder
+Gradle wrapper distributions are stored in the `~/.gradle/wrapper/dists` folder
 in your home directory.
 
 **Note**: You may first have to execute the wrapper script to trigger a download of
