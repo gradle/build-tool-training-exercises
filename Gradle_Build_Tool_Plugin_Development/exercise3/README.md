@@ -149,7 +149,7 @@ In `CoveragelockPlugin` register a task called `lockInCoverageGains` of type
 
 ```kotlin
 project.tasks.register("lockInCoverageGains", CoverageLockInTask::class.java) { task ->
-    task.counter.set(extension.counter.get())
+    task.counter.set(extension.counter)
     // Set other properties...
     task.reportXmlFile.set(
         project.tasks.named("jacocoTestReport", JacocoReport::class.java)
