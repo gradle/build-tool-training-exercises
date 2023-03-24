@@ -18,6 +18,24 @@ you will go over the following:
 * You can perform the exercises in the same Gradle project used in exercise 1.
 
 ---
+### Disable Remote Cache
+
+Update the `settings.gradle.kts` file to disable the remote cache and enable the local cache:
+
+```kotlin
+buildCache {
+    local {
+        isEnabled = true
+        //...
+    }
+    remote {
+        isEnabled = false
+        //...
+    }
+}
+```
+
+---
 ### Enable Caching for Zip Task
 
 Custom tasks based on the `Zip` task type will already have wiring for inputs
