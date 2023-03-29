@@ -41,6 +41,21 @@ You can refer to the full
 if you get stuck.
 
 ---
+### :math:game module
+
+This module will handle all the math related functionality needed by
+the game fragment.
+
+The `:math:game:` module files are already in the project workspace. All we need to do is add the
+module to the `settings.gradle.kts` file:
+
+```kotlin
+include(":math:game")
+```
+
+Click on the Gradle sync button.
+
+---
 ### :math:calc module
 
 This module will handle all the math related functionality needed by
@@ -52,7 +67,11 @@ the calculator fragment.
 <img width="75%" height="75%" src="https://user-images.githubusercontent.com/120980/220796992-7799b7bf-97fd-4bd6-a798-eb63ca7374e1.png">
 </p>
 
-* Update the contents of the [build.gradle.kts](solution/math/calc/build.gradle.kts) to include `exp4j` dependency, java toolchain and test coverage configuration
+* Update the contents of the build.gradle.kts file as follows:
+  * Copy the contents of the [:math:game build.gradle.kts file](solution/math/game/build.gradle.kts)
+  * Add a dependency for `exp4j` dependency
+
+The file should now look like:
 
 ```kotlin
 plugins {
@@ -99,7 +118,7 @@ tasks.named("check") {
 }
 ```
 
-* Add code for [Calc.kt](solution/math/calc/src/main/java/com/gradle/lab/calc/Calc.kt)
+* Add code for `math/calc/src/main/java/com/gradle/lab/calc/Calc.kt`:
 
 ```kotlin
 package com.gradle.lab.calc
@@ -141,7 +160,7 @@ object Calc {
 }
 ```
 
-* Add code for [CalcTest.kt](solution/math/calc/src/test/java/com/gradle/lab/calc/CalcTest.kt)
+* Add code for `math/calc/src/test/java/com/gradle/lab/calc/CalcTest.kt`:
 
 ```kotlin
 package com.gradle.lab.calc
@@ -181,157 +200,6 @@ class CalcTest {
         assertEquals("6", evalExpression("2*3"))
         assertEquals("3", evalExpression("9/3"))
         assertNull(evalExpression("2+3*"), "invalid input")
-    }
-}
-```
-
----
-### :math:game module
-
-This module will handle all the math related functionality needed by
-the game fragment.
-
-* Add a kotlin library module called `:math:game` with a `Game` class
-* Update the contents of the [build.gradle.kts](solution/math/game/build.gradle.kts) to include java toolchain and test coverage configuration
-
-```kotlin
-plugins {
-    id("java-library")
-    id("org.jetbrains.kotlin.jvm")
-    id("jacoco")
-    alias(libs.plugins.jacocolog)
-}
-
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(11))
-    }
-}
-
-dependencies {
-    testImplementation(kotlin("test"))
-}
-
-tasks.named<JacocoReport>("jacocoTestReport") {
-    dependsOn(tasks.named("test"))
-    reports {
-        xml.required.set(true)
-    }
-}
-tasks.named<JacocoCoverageVerification>("jacocoTestCoverageVerification") {
-    violationRules {
-        rule {
-            limit {
-                counter = "LINE"
-                value = "COVEREDRATIO"
-                minimum = "0.5".toBigDecimal()
-            }
-        }
-    }
-}
-tasks.named("check") {
-    dependsOn("jacocoTestCoverageVerification")
-}
-tasks.named("check") {
-    dependsOn("jacocoTestReport")
-}
-```
-
-* Add code for [Game.kt](solution/math/game/src/main/java/com/gradle/lab/game/Game.kt)
-
-```kotlin
-package com.gradle.lab.game
-
-import java.util.*
-
-object Game {
-
-    private val RANDOM = Random()
-
-    fun generateNextQuestion(): String {
-        val type = RANDOM.nextInt(3)
-
-        val question = when (type) {
-            0 -> generateAddQuestion()
-            1 -> generateSubtractionQuestion()
-            else -> generateMultiplyQuestion()
-        }
-
-        return question
-    }
-
-    /**
-     * Generate an addition question with 2 numbers.
-     */
-    fun generateAddQuestion(): String {
-        val firstNumber = RANDOM.nextInt(990) + 11
-        val secondNumber = RANDOM.nextInt(990) + 11
-        return "$firstNumber+$secondNumber"
-    }
-
-    /**
-     * Generate a subtraction question with 2 numbers.
-     */
-    fun generateSubtractionQuestion(): String {
-        val firstNumber = RANDOM.nextInt(950) + 51
-        val secondNumber = RANDOM.nextInt(firstNumber - 20) + 11
-        return "$firstNumber-$secondNumber"
-    }
-
-    /**
-     * Generate a multiplication question with 2 numbers.
-     */
-    fun generateMultiplyQuestion(): String {
-        val firstNumber = RANDOM.nextInt(27) + 4
-        val secondNumber = RANDOM.nextInt(27) + 4
-        return "$firstNumber*$secondNumber"
-    }
-}
-```
-
-* Add code for [GameTest.kt](solution/math/game/src/test/java/com/gradle/lab/game/GameTest.kt)
-
-```kotlin
-package com.gradle.lab.game
-
-import java.util.regex.Pattern
-
-import kotlin.test.Test
-import kotlin.test.assertNotNull
-import kotlin.test.assertTrue
-
-class GameTest {
-
-    @Test
-    fun generateNextQuestion() {
-        assertNotNull(Game.generateAddQuestion(), "should return question")
-    }
-
-    @Test
-    fun generateAddQuestion() {
-        val question = Game.generateAddQuestion()
-        val regex = "[0-9]+\\+[0-9]+"
-        val pattern = Pattern.compile(regex)
-        val matcher = pattern.matcher(question)
-        assertTrue(matcher.matches(), "should match regex")
-    }
-
-    @Test
-    fun generateSubtractionQuestion() {
-        val question = Game.generateSubtractionQuestion()
-        val regex = "[0-9]+-[0-9]+"
-        val pattern = Pattern.compile(regex)
-        val matcher = pattern.matcher(question)
-        assertTrue(matcher.matches(), "should match regex")
-    }
-
-    @Test
-    fun generateMultiplyQuestion() {
-        val question = Game.generateMultiplyQuestion()
-        val regex = "[0-9]+\\*[0-9]+"
-        val pattern = Pattern.compile(regex)
-        val matcher = pattern.matcher(question)
-        assertTrue(matcher.matches(), "should match regex")
     }
 }
 ```
