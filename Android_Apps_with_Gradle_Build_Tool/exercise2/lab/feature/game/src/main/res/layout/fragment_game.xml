@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".GameFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/main_buttons_layout"
+        android:layout_alignParentBottom="false"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="64sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:id="@+id/game_question"
+            android:layout_margin="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="12"
+                android:inputType="number"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp"
+                />
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                app:cornerRadius="36dp"
+                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+                android:textSize="21sp"
+                android:layout_margin="12dp"
+                android:backgroundTint="#FB8C00"
+                app:icon="@drawable/baseline_send_24"
+                app:iconTint="@color/white"
+                android:id="@+id/button_answer"/>
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="150dp"
+            android:layout_height="72dp"
+            app:cornerRadius="36dp"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+            android:text="@string/next"
+            android:textSize="21sp"
+            android:textColor="@color/white"
+            android:layout_margin="12dp"
+            android:id="@+id/button_next"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="48sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:id="@+id/answer_result"
+            android:layout_margin="16dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
