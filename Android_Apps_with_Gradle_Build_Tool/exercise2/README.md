@@ -54,9 +54,11 @@ Update the `build.gradle.kts` file as follows:
 * Switch to using the version catalog and plugin alias
 
 ```kotlin
-alias(libs.plugins.android.application) apply false
-alias(libs.plugins.android.library) apply false
-alias(libs.plugins.kotlin.android) apply false
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.android.library) apply false
+    alias(libs.plugins.kotlin.android) apply false
+}
 ```
 
 Update the `app/build.gradle.kts` file as follows:
@@ -64,21 +66,25 @@ Update the `app/build.gradle.kts` file as follows:
 * Switch the apply plugin section to use the version catalog
 
 ```kotlin
-alias(libs.plugins.android.application)
-alias(libs.plugins.kotlin.android)
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+}
 ```
 
 * Switch the dependencies section to use the version catalog
 
 ```kotlin
-implementation(libs.androidx.core.kts)
-implementation(libs.androidx.appcompat)
-implementation(libs.android.material)
-implementation(libs.androidx.constraintlayout)
+    dependencies {
+    implementation(libs.androidx.core.kts)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.android.material)
+    implementation(libs.androidx.constraintlayout)
 
-testImplementation(libs.junit)
+    testImplementation(libs.junit)
 
-androidTestImplementation(libs.bundles.androidx.tests)
+    androidTestImplementation(libs.bundles.androidx.tests)
+}
 ```
 
 Click on the `Sync Gradle` button in Android Studio to ensure things are
