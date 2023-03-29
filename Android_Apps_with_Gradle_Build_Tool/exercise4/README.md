@@ -523,18 +523,16 @@ implementation(project(":feature:game"))
 ```
 
 * Add calculate vector
+* Add videogame asset vector
+* Add a `Android Resource File` of type `menu` called `bottom_nav_menu` with the following contents:
 
 <p align="center">
 <img width="75%" height="75%" src="https://user-images.githubusercontent.com/120980/220099390-79e8288c-095b-4c39-9197-b7e26c59933b.png">
 </p>
 
-* Add videogame asset vector
-
 <p align="center">
 <img width="50%" height="50%" src="https://user-images.githubusercontent.com/120980/220099555-c6b020f1-38e1-49d2-938f-b4c368b72e20.png">
 </p>
-
-* Add a `Android Resource File` of type `menu` called `bottom_nav_menu` with the following contents:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
