@@ -19,12 +19,26 @@ At the end of this exercise you will have a fully working app.
 * You can perform the exercises in the same project used in exercise 3
 
 ---
+### :feature:game module
+
+This module will provide the fragment for the calculator part of the app.
+
+The `:feature:game:` module files are already in the project workspace. All we need to do is add the
+module to the `settings.gradle.kts` file:
+
+```kotlin
+include(":feature:game")
+```
+
+Click on the Gradle sync button.
+
+---
 ### :feature:calc module
 
 This module will provide the fragment for the calculator part of the app.
 
 * Add an android library module called `:feature:calc`.
-* Update the contents of the [feature/calc/build.gradle.kts](../exercise3/solution/feature/calc/build.gradle.kts) to use the version catalog, JDK 11 and dependency on `:math:calc`
+* Update the contents of the `feature/calc/build.gradle.kts` to use the version catalog, JDK 11 and dependency on `:math:calc`
 
 ```kotlin
 plugins {
@@ -76,12 +90,7 @@ dependencies {
 <img width="75%" height="75%" src="https://user-images.githubusercontent.com/120980/220099752-b5edb691-1f19-4ecb-bd5f-a43af43798b0.png">
 </p>
 
-* Add a `drawable` file called [borderbottom.xml](../exercise3/solution/feature/calc/src/main/res/drawable/borderbottom.xml)
-* Add a blank fragment called `CalcFragment`
-
-<p align="center">
-<img width="75%" height="75%" src="https://user-images.githubusercontent.com/120980/220098707-862c64e9-3aea-4615-9c40-8e0ace29dace.png">
-</p>
+* Add a `drawable` file called `borderbottom.xml`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -95,7 +104,13 @@ dependencies {
 </layer-list>
 ```
 
-* Add code for [feature/calc/src/main/java/com/gradle/lab/calc/CalcFragment.kt](../exercise3/solution/feature/calc/src/main/java/com/gradle/lab/calc/CalcFragment.kt)
+* Add a blank fragment called `CalcFragment`:
+
+<p align="center">
+<img width="75%" height="75%" src="https://user-images.githubusercontent.com/120980/220098707-862c64e9-3aea-4615-9c40-8e0ace29dace.png">
+</p>
+
+* Add code for `feature/calc/src/main/java/com/gradle/lab/calc/CalcFragment.kt`:
 
 ```kotlin
 package com.gradle.lab.calc
@@ -202,7 +217,7 @@ class CalcFragment : Fragment() {
 }
 ```
 
-* Add code for [feature/calc/src/main/res/layout/fragment_calc.xml](../exercise3/solution/feature/calc/src/main/res/layout/fragment_calc.xml)
+* Add code for `feature/calc/src/main/res/layout/fragment_calc.xml`:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -487,237 +502,11 @@ class CalcFragment : Fragment() {
 </RelativeLayout>
 ```
 
-* Add code for [feature/calc/src/main/res/values/strings.xml](../exercise3/solution/feature/calc/src/main/res/values/strings.xml)
+* Add code for `feature/calc/src/main/res/values/strings.xml`:
 
 ```xml
 <resources>
     <string name="error">Error</string>
-</resources>
-```
-
----
-### :feature:game module
-
-This module will provide the fragment for the calculator part of the app.
-
-* Add an android library module called `:feature:game`.
-* Update the contents of the [feature/game/build.gradle.kts](../exercise3/solution/feature/game/build.gradle.kts) to use the version catalog, JDK 11 and dependency on `:math:calc` and `:math:game`
-
-```kotlin
-plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-}
-
-android {
-    namespace = "com.gradle.lab.game"
-    compileSdk = 33
-
-    defaultConfig {
-        minSdk = 24
-        targetSdk = 33
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-    kotlinOptions {
-        jvmTarget = "11"
-    }
-}
-
-dependencies {
-    implementation(libs.androidx.core.kts)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.android.material)
-    implementation(libs.androidx.constraintlayout)
-    implementation(project(":math:calc"))
-    implementation(project(":math:game"))
-
-    androidTestImplementation(libs.bundles.androidx.tests)
-}
-```
-
-* Add a vector for `send`
-* Add a blank fragment called `GameFragment`
-* Add code for [feature/game/src/main/java/com/gradle/lab/game/GameFragment.kt](../exercise3/solution/feature/game/src/main/java/com/gradle/lab/game/GameFragment.kt)
-
-```kotlin
-package com.gradle.lab.game
-
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import androidx.fragment.app.Fragment
-import com.gradle.lab.calc.Calc
-
-/**
- * A simple [Fragment] subclass.
- */
-class GameFragment : Fragment() {
-
-    private var gameQuestion: TextView? = null
-    private var answerResult: TextView? = null
-    private var answer: EditText? = null
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_game, container, false)
-
-        gameQuestion = view.findViewById(R.id.game_question)
-        answerResult = view.findViewById(R.id.answer_result)
-        answer = view.findViewById(R.id.answer)
-
-        initNextButton(view.findViewById(R.id.button_next))
-        initAnswerButton(view.findViewById(R.id.button_answer))
-
-        generateNextQuestion()
-
-        return view
-    }
-
-    private fun initNextButton(button: Button) {
-        button.setOnClickListener { generateNextQuestion() }
-    }
-
-    private fun initAnswerButton(button: Button) {
-        button.setOnClickListener { checkAnswer() }
-    }
-
-    private fun generateNextQuestion() {
-        answerResult!!.text = ""
-        answer!!.setText("")
-        gameQuestion!!.text = Game.generateNextQuestion()
-    }
-
-    private fun checkAnswer() {
-        val actual = answer!!.text.toString().trim()
-        if (actual == "") {
-            return
-        }
-        val expected: String? =
-            Calc.evalExpression(gameQuestion!!.text.toString().trim())
-        if (expected == null) {
-            answerResult!!.text = getString(R.string.error)
-            return
-        }
-        if (expected == actual) {
-            answerResult!!.text = getString(R.string.correct)
-        } else {
-            answerResult!!.text = getString(R.string.wrong, expected)
-        }
-    }
-}
-```
-
-* Add code for [feature/game/src/main/res/layout/fragment_game.xml](../exercise3/solution/feature/game/src/main/res/layout/fragment_game.xml)
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".GameFragment">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/main_buttons_layout"
-        android:layout_alignParentBottom="false"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="64sp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:id="@+id/game_question"
-            android:layout_margin="16dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/answer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="12"
-                android:inputType="number"
-                android:layout_marginTop="30dp"
-                android:layout_marginBottom="30dp"
-                />
-            <com.google.android.material.button.MaterialButton
-                android:layout_width="72dp"
-                android:layout_height="72dp"
-                app:cornerRadius="36dp"
-                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-                android:textSize="21sp"
-                android:layout_margin="12dp"
-                android:backgroundTint="#FB8C00"
-                app:icon="@drawable/baseline_send_24"
-                app:iconTint="@color/white"
-                android:id="@+id/button_answer"/>
-        </LinearLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="150dp"
-            android:layout_height="72dp"
-            app:cornerRadius="36dp"
-            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
-            android:text="@string/next"
-            android:textSize="21sp"
-            android:textColor="@color/white"
-            android:layout_margin="12dp"
-            android:id="@+id/button_next"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="48sp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:id="@+id/answer_result"
-            android:layout_margin="16dp" />
-
-    </LinearLayout>
-
-</RelativeLayout>
-```
-
-* Add code for [feature/game/src/main/res/values/strings.xml](../exercise3/solution/feature/game/src/main/res/values/strings.xml)
-
-```xml
-<resources>
-    <string name="next">Next</string>
-    <string name="error">Error</string>
-    <string name="correct">Correct!</string>
-    <string name="wrong">Wrong, expected: %1$s</string>
 </resources>
 ```
 
@@ -734,15 +523,18 @@ implementation(project(":feature:game"))
 ```
 
 * Add calculate vector
-* Add videogame asset vector
-* Add a `Android Resource File` of type `menu` called `bottom_nav_menu` with the following contents:
 
 <p align="center">
 <img width="75%" height="75%" src="https://user-images.githubusercontent.com/120980/220099390-79e8288c-095b-4c39-9197-b7e26c59933b.png">
 </p>
+
+* Add videogame asset vector
+
 <p align="center">
 <img width="50%" height="50%" src="https://user-images.githubusercontent.com/120980/220099555-c6b020f1-38e1-49d2-938f-b4c368b72e20.png">
 </p>
+
+* Add a `Android Resource File` of type `menu` called `bottom_nav_menu` with the following contents:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -757,7 +549,7 @@ implementation(project(":feature:game"))
 </menu>
 ```
 
-* Update the contents of [app/src/main/res/layout/activity_main.xml](../exercise3/solution/app/src/main/res/layout/activity_main.xml)
+* Update the contents of `app/src/main/res/layout/activity_main.xml`
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -785,7 +577,7 @@ implementation(project(":feature:game"))
 </RelativeLayout>
 ```
 
-* Update the contents of [app/src/main/java/com/gradle/lab/mycalculator/MainActivity.kt](../exercise3/solution/app/src/main/java/com/gradle/lab/mycalculator/MainActivity.kt)
+* Update the contents of `app/src/main/java/com/gradle/lab/mycalculator/MainActivity.kt`:
 
 ```kotlin
 package com.gradle.lab.mycalculator
