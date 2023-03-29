@@ -75,7 +75,7 @@ plugins {
 * Switch the dependencies section to use the version catalog
 
 ```kotlin
-    dependencies {
+dependencies {
     implementation(libs.androidx.core.kts)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
