@@ -34,8 +34,9 @@ If you get stuck you can refer to the [solution](solution/gradle/libs.versions.t
 ### Create build-logic project
 
 Create a top-level directory called `build-logic`. Put a `settings.gradle.kts`
-file under there. Have the file reference the existing version catalog. If
-you get stuck you can reference the [solution](solution/build-logic/settings.gradle.kts).
+file under there. Have the file
+[reference the existing version catalog](https://docs.gradle.org/current/userguide/platforms.html#sec:importing-catalog-from-file).
+If you get stuck you can reference the [solution](solution/build-logic/settings.gradle.kts).
 
 ---
 ### Create conventions sub-project
