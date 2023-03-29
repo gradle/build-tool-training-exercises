@@ -4,7 +4,7 @@
 <img width="10%" height="10%" src="https://user-images.githubusercontent.com/120980/174325546-8558160b-7f16-42cb-af0f-511849f22ebc.png">
 </p>
 
-This is a hands-on exercise to go along with the
+This is an OPTIONAL hands-on exercise to go along with the
 **Android Apps with Gradle Build Tool** training module. In this exercise
 you will go over the following:
 

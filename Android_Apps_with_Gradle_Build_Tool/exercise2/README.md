@@ -13,8 +13,9 @@ you will go over the following:
 ---
 ### Prerequisites
 
-* Completed exercise 1
+* [OPTIONAL] Completed exercise 1
 * You can perform the exercises in the same project used in exercise 1
+or open the `lab` project and proceed from there
 
 ---
 ### Create version catalog
