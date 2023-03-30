@@ -1,6 +1,6 @@
 plugins {
     id("java-library")
-    id("org.jetbrains.kotlin.jvm")
+    alias(libs.plugins.kotlin.jvm)
     id("jacoco")
     alias(libs.plugins.jacocolog)
 }
@@ -36,4 +36,7 @@ tasks.named<JacocoCoverageVerification>("jacocoTestCoverageVerification") {
 }
 tasks.named("check") {
     dependsOn("jacocoTestCoverageVerification")
+}
+tasks.named("check") {
+    dependsOn("jacocoTestReport")
 }
