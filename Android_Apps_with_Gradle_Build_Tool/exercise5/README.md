@@ -192,6 +192,20 @@ Now apply the shared convention plugins to the relevant sub-projects while remov
 the common configuration from the build files. Notice that for the feature
 sub-projects the `namespace` should remain.
 
+```kotlin
+plugins {
+   ...
+   id("kotlin-test-coverage")
+}
+```
+
+```kotlin
+plugins {
+   ...
+   id("base-android-library")
+}
+```
+
 ### Run app
 
 Run the app to make sure things are still working. You can also run the `jacocoTestReport` task.
