@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/calc_item"
+        android:title="Calc"
+        android:icon="@drawable/baseline_calculate_24"/>
+    <item android:id="@+id/game_item"
+        android:title="Game"
+        android:icon="@drawable/baseline_videogame_asset_24"/>
+</menu>
