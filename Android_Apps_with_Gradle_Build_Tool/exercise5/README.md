@@ -23,10 +23,18 @@ you will go over the following:
 
 * Add the jacocolog plugin version `3.1.0` as a library. You can
 reference the information
-[here](https://plugins.gradle.org/plugin/org.barfuin.gradle.jacocolog) and
-[here](https://mvnrepository.com/artifact/org.barfuin.gradle.jacocolog/org.barfuin.gradle.jacocolog.gradle.plugin/3.0.0-RC2) to figure out the group and name.
+[here](https://mvnrepository.com/artifact/org.barfuin.gradle.jacocolog/org.barfuin.gradle.jacocolog.gradle.plugin/3.0.0-RC2) to figure out the group and name
 * Add the [android library plugin](https://maven.google.com/web/index.html?q=android.library.gradle.plugin#com.android.library:com.android.library.gradle.plugin:7.4.1)
 as a library
+* Add the [kotlin library plugin](https://mvnrepository.com/artifact/org.jetbrains.kotlin.android/org.jetbrains.kotlin.android.gradle.plugin/1.8.0)
+as a library
+
+Hint:
+```text
+jacoco-log = { module = "org.barfuin.gradle.jacocolog:org.barfuin.gradle.jacocolog.gradle.plugin", version.ref = "jacocolog" }
+android-library = { module = "com.android.library:com.android.library.gradle.plugin",  version.ref = "androidPlugin" }
+kotlin-android = { module = "org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin", version.ref = "kotlinAndroid" }
+```
 
 If you get stuck you can refer to the [solution](solution/gradle/libs.versions.toml).
 
@@ -34,9 +42,32 @@ If you get stuck you can refer to the [solution](solution/gradle/libs.versions.t
 ### Create build-logic project
 
 Create a top-level directory called `build-logic`. Put a `settings.gradle.kts`
-file under there. Have the file
-[reference the existing version catalog](https://docs.gradle.org/current/userguide/platforms.html#sec:importing-catalog-from-file).
-If you get stuck you can reference the [solution](solution/build-logic/settings.gradle.kts).
+file under there and for the contents do the following:
+* Copy the contents from the top-level settings file without the `pluginManagement` section
+* Add `gradlePluginPortal()` as a repository
+* Reference
+[the existing version catalog](https://docs.gradle.org/current/userguide/platforms.html#sec:importing-catalog-from-file)
+* Have only one subproject called `conventions`
+
+It should look like:
+```kotlin
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    versionCatalogs {
+        create("libs") {
+            from(files("../gradle/libs.versions.toml"))
+        }
+    }
+}
+
+rootProject.name = "build-logic"
+include(":conventions")
+```
 
 ---
 ### Create conventions sub-project
@@ -45,26 +76,120 @@ Under the `build-logic` directory, create a `conventions` directory. Put a
 `build.gradle.kts` file there. It should have 2 sections:
 
 * Apply `kotlin-dsl` plugin
-* Add `implementation` dependency on jacocolog and android library using the version catalog
+* Add `implementation` dependency on jacocolog, android library and kotlin android using the version catalog
 
-If you get stuck you can refer to the [solution](solution/build-logic/conventions/build.gradle.kts).
+```kotlin
+plugins {
+    `kotlin-dsl`
+}
 
-Now create `src/main/kotlin` directories with
-[kotlin-test-coverage.gradle.kts](solution/build-logic/conventions/src/main/kotlin/kotlin-test-coverage.gradle.kts)
-and
-[base-android-library.gradle.kts](solution/build-logic/conventions/src/main/kotlin/base-android-library.gradle.kts)
-files with the contents linked.
+dependencies {
+    implementation(libs.jacoco.log)
+    implementation(libs.android.library)
+    implementation(libs.kotlin.android)
+}
+```
+
+Now create `src/main/kotlin` directories. Extract common test coverage configuration into a file
+called `kotlin-test-coverage.gradle.kts`:
+
+**Note**: Don't use the version catalog in the plugins section.
+
+```kotlin
+plugins {
+    id("jacoco")
+    id("org.barfuin.gradle.jacocolog")
+}
+
+tasks.named<JacocoReport>("jacocoTestReport") {
+    dependsOn(tasks.named("test"))
+    reports {
+        xml.required.set(true)
+    }
+}
+
+tasks.named<JacocoCoverageVerification>("jacocoTestCoverageVerification") {
+    violationRules {
+        rule {
+            limit {
+                counter = "LINE"
+                value = "COVEREDRATIO"
+                minimum = "0.5".toBigDecimal()
+            }
+        }
+    }
+}
+
+tasks.named("check") {
+    dependsOn("jacocoTestCoverageVerification")
+}
+```
+
+Extract common android configuration into a file called `base-android-library.gradle.kts`:
+
+**Note**: Don't use the version catalog in the plugins section.
+
+```kotlin
+plugins {
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+}
+
+android {
+    compileSdk = 33
+
+    defaultConfig {
+        minSdk = 24
+        targetSdk = 33
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+}
+
+val libs = the<VersionCatalogsExtension>().named("libs")
+dependencies {
+    implementation(libs.findLibrary("androidx.core.kts").get())
+    implementation(libs.findLibrary("androidx.appcompat").get())
+    implementation(libs.findLibrary("androidx.constraintlayout").get())
+    implementation(libs.findLibrary("android.material").get())
+    
+    testImplementation(libs.findLibrary("junit").get())
+
+    androidTestImplementation(libs.findBundle("androidx.tests").get())
+}
+```
 
 Notice that the `dependencies` section uses the version catalog.
 
 ### Apply shared configuration
 
-Update the top-level [settings.gradle.kts](solution/settings.gradle.kts) file to
-use the shared configuration in `build-logic` using `includeBuild` in the
-`pluginManagement` section.
+Update the top-level `settings.gradle.kts` file to use the shared configuration
+in `build-logic` using `includeBuild` in the `pluginManagement` section.
 
-Now apply the shared convention plugins to the relevant sub-projects. Remove
-the configuration from the sub-project build files. Notice that for the feature
+```kotlin
+pluginManagement {
+    includeBuild("build-logic")
+    ...
+}
+```
+
+Now apply the shared convention plugins to the relevant sub-projects while removing
+the common configuration from the build files. Notice that for the feature
 sub-projects the `namespace` should remain.
 
 ### Run app
