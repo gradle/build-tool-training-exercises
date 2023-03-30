@@ -113,3 +113,7 @@ dependencies {
 Click on the `Sync Gradle`button in Android Studio to ensure things are
 correctly configured. If there is an issue refer to the
 [solution folder](solution/).
+
+<p align="center">
+<img width="25%" height="25%" src="https://user-images.githubusercontent.com/120980/228761993-442b1761-bbeb-428b-a401-de0286be7ee3.png">
+</p>
