@@ -16,5 +16,3 @@ rootProject.name = "MyCalculator"
 include(":app")
 include(":math:calc")
 include(":math:game")
-include(":feature:calc")
-include(":feature:game")
