@@ -37,8 +37,6 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
     implementation(libs.androidx.constraintlayout)
-    implementation(project(":feature:calc"))
-    implementation(project(":feature:game"))
 
     androidTestImplementation(libs.bundles.androidx.tests)
 }
