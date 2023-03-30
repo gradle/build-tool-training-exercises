@@ -42,8 +42,8 @@ This module will provide the fragment for the calculator part of the app.
 
 ```kotlin
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
 }
 
 android {
@@ -515,7 +515,7 @@ class CalcFragment : Fragment() {
 
 Now let's update the `app` module to use the other modules we've added.
 
-* Update the [app/build.gradle.kts](../exercise3/solution/app/build.gradle.kts) with feature dependencies
+* Update the [app/build.gradle.kts](solution/app/build.gradle.kts) with feature dependencies
 
 ```kotlin
 implementation(project(":feature:calc"))
