@@ -205,6 +205,27 @@ class CalcTest {
 ```
 
 ---
+### Update Version Catalog
+
+Put the following plugin entry in the version catalog:
+
+```text
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "1.8.0" }
+```
+
+Now update the top-level `build.gradle.kts` to use the version catalog entry:
+
+```kotlin
+alias(libs.plugins.kotlin.jvm) apply false
+```
+
+Next update the `:math:calc` and `:math:game` build files to use the version catalog entry:
+
+```kotlin
+alias(libs.plugins.kotlin.jvm)
+```
+
+---
 ### Run Test Coverage Report
 
 Run the task `jacocoTestReport` and observe the coverage output:
