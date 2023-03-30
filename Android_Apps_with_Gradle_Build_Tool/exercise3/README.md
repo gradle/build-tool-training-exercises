@@ -8,7 +8,7 @@ This is a hands-on exercise to go along with the
 **Android Apps with Gradle Build Tool** training module. In this exercise
 you will go over the following:
 
-* Create modules for features
+* Create modules for math functionality
 
 At the end of this exercise you will have the math modules ready.
 
