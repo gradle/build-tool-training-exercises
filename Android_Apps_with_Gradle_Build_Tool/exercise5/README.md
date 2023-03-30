@@ -90,8 +90,8 @@ dependencies {
 }
 ```
 
-Now create `src/main/kotlin` directories. Extract common test coverage configuration into a file
-called `kotlin-test-coverage.gradle.kts`:
+Now create `src/main/kotlin` directories.
+Extract common test coverage configuration into a file called `kotlin-test-coverage.gradle.kts`:
 
 **Note**: Don't use the version catalog in the plugins section.
 
