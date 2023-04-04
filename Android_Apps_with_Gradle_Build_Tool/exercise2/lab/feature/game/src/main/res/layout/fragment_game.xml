@@ -20,7 +20,7 @@
             android:text=""
             android:textSize="64sp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@android:color/black"
             android:id="@+id/game_question"
             android:layout_margin="16dp" />
 
@@ -48,7 +48,7 @@
                 android:layout_margin="12dp"
                 android:backgroundTint="#FB8C00"
                 app:icon="@drawable/baseline_send_24"
-                app:iconTint="@color/white"
+                app:iconTint="@android:color/white"
                 android:id="@+id/button_answer"/>
         </LinearLayout>
 
@@ -59,7 +59,7 @@
             style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
             android:text="@string/next"
             android:textSize="21sp"
-            android:textColor="@color/white"
+            android:textColor="@android:color/white"
             android:layout_margin="12dp"
             android:id="@+id/button_next"/>
 
@@ -69,7 +69,7 @@
             android:text=""
             android:textSize="48sp"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@android:color/black"
             android:id="@+id/answer_result"
             android:layout_margin="16dp" />
 

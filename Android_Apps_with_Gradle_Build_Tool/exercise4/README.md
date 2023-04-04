@@ -246,7 +246,7 @@ class CalcFragment : Fragment() {
         android:text=""
         android:textSize="36sp"
         android:textAlignment="textEnd"
-        android:textColor="@color/black"
+        android:textColor="@android:color/black"
         android:layout_above="@+id/main_buttons_layout"
         android:id="@+id/equation_field"
         android:background="@drawable/borderbottom"
@@ -272,7 +272,7 @@ class CalcFragment : Fragment() {
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:text="AC"
                 android:textSize="21sp"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:backgroundTint="#E53935"
                 android:layout_margin="12dp"
                 android:id="@+id/button_ac"/>
@@ -285,7 +285,7 @@ class CalcFragment : Fragment() {
                 android:layout_margin="12dp"
                 android:backgroundTint="#E53935"
                 app:icon="@drawable/baseline_backspace_24"
-                app:iconTint="@color/white"
+                app:iconTint="@android:color/white"
                 android:id="@+id/button_del"/>
             <com.google.android.material.button.MaterialButton
                 android:layout_width="72dp"
@@ -294,7 +294,7 @@ class CalcFragment : Fragment() {
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:textSize="32sp"
                 android:layout_margin="12dp"
-                android:backgroundTint="@color/white"
+                android:backgroundTint="@android:color/white"
                 android:visibility="invisible"
                 android:enabled="false"
                 android:id="@+id/button_hidden"/>
@@ -307,7 +307,7 @@ class CalcFragment : Fragment() {
                 android:layout_margin="12dp"
                 android:backgroundTint="#FB8C00"
                 android:text="/"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:id="@+id/button_divide"/>
         </LinearLayout>
         <LinearLayout
@@ -323,7 +323,7 @@ class CalcFragment : Fragment() {
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:text="7"
                 android:textSize="32sp"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:layout_margin="12dp"
                 android:id="@+id/button_7"/>
             <com.google.android.material.button.MaterialButton
@@ -333,7 +333,7 @@ class CalcFragment : Fragment() {
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:text="8"
                 android:textSize="32sp"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:layout_margin="12dp"
                 android:id="@+id/button_8"/>
             <com.google.android.material.button.MaterialButton
@@ -343,7 +343,7 @@ class CalcFragment : Fragment() {
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:text="9"
                 android:textSize="32sp"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:layout_margin="12dp"
                 android:id="@+id/button_9"/>
             <com.google.android.material.button.MaterialButton
@@ -355,7 +355,7 @@ class CalcFragment : Fragment() {
                 android:layout_margin="12dp"
                 android:backgroundTint="#FB8C00"
                 android:text="*"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:id="@+id/button_multiply"/>
         </LinearLayout>
         <LinearLayout
@@ -371,7 +371,7 @@ class CalcFragment : Fragment() {
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:text="4"
                 android:textSize="32sp"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:layout_margin="12dp"
                 android:id="@+id/button_4"/>
             <com.google.android.material.button.MaterialButton
@@ -381,7 +381,7 @@ class CalcFragment : Fragment() {
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:text="5"
                 android:textSize="32sp"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:layout_margin="12dp"
                 android:id="@+id/button_5"/>
             <com.google.android.material.button.MaterialButton
@@ -391,7 +391,7 @@ class CalcFragment : Fragment() {
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:text="6"
                 android:textSize="32sp"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:layout_margin="12dp"
                 android:id="@+id/button_6"/>
             <com.google.android.material.button.MaterialButton
@@ -403,7 +403,7 @@ class CalcFragment : Fragment() {
                 android:layout_margin="12dp"
                 android:backgroundTint="#FB8C00"
                 android:text="-"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:id="@+id/button_subtract"/>
         </LinearLayout>
         <LinearLayout
@@ -419,7 +419,7 @@ class CalcFragment : Fragment() {
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:text="1"
                 android:textSize="32sp"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:layout_margin="12dp"
                 android:id="@+id/button_1"/>
             <com.google.android.material.button.MaterialButton
@@ -429,7 +429,7 @@ class CalcFragment : Fragment() {
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:text="2"
                 android:textSize="32sp"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:layout_margin="12dp"
                 android:id="@+id/button_2"/>
             <com.google.android.material.button.MaterialButton
@@ -439,7 +439,7 @@ class CalcFragment : Fragment() {
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:text="3"
                 android:textSize="32sp"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:layout_margin="12dp"
                 android:id="@+id/button_3"/>
             <com.google.android.material.button.MaterialButton
@@ -451,7 +451,7 @@ class CalcFragment : Fragment() {
                 android:layout_margin="12dp"
                 android:backgroundTint="#FB8C00"
                 android:text="+"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:id="@+id/button_add"/>
         </LinearLayout>
         <LinearLayout
@@ -467,7 +467,7 @@ class CalcFragment : Fragment() {
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:text="0"
                 android:textSize="32sp"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:layout_margin="12dp"
                 android:id="@+id/button_0"/>
             <com.google.android.material.button.MaterialButton
@@ -477,7 +477,7 @@ class CalcFragment : Fragment() {
                 style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
                 android:text="."
                 android:textSize="32sp"
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:layout_margin="12dp"
                 android:id="@+id/button_dot"/>
             <com.google.android.material.button.MaterialButton
@@ -489,7 +489,7 @@ class CalcFragment : Fragment() {
                 android:layout_margin="12dp"
                 android:backgroundTint="#FB8C00"
                 android:text="="
-                android:textColor="@color/white"
+                android:textColor="@android:color/white"
                 android:id="@+id/button_equals"/>
         </LinearLayout>
 
