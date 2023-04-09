@@ -91,7 +91,11 @@ private fun parseCoveragePercentage(reportFile: File, parser: XmlParser): Float?
 
             val total : Float = missed + covered
             val percent : Float = covered / total
-            return String.format("%.2f", percent).toFloat()
+
+            // Use formatter to round to the floor.
+            val formatter = DecimalFormat("#.##")
+            formatter.roundingMode = RoundingMode.FLOOR
+            return formatter.format(percent).toFloat()
         }
     }
 
