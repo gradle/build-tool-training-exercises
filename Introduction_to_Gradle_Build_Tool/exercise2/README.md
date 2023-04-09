@@ -35,7 +35,7 @@ all projects, if there were more than one.
 </p>
 
 Close the Gradle toolbar. Open the `Terminal` tab in the lower toolbar and
-run `./gradlew tasks --all`. Scroll up and explore the tasks.
+run `./gradlew :app:tasks --all`. Scroll up and explore the tasks.
 
 <p align="center">
 <img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174327952-d0efd1f1-f3fa-4226-9937-ee7d84e488f3.png">
