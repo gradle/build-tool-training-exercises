@@ -10,6 +10,8 @@ import org.gradle.api.tasks.InputFile
 import org.gradle.api.tasks.OutputFile
 import org.gradle.api.tasks.TaskAction
 import java.io.File
+import java.math.RoundingMode
+import java.text.DecimalFormat
 
 abstract class CoverageLockInTask : DefaultTask() {
 
@@ -72,7 +74,11 @@ abstract class CoverageLockInTask : DefaultTask() {
 
                 val total : Float = missed + covered
                 val percent : Float = covered / total
-                return String.format("%.2f", percent).toFloat()
+
+                // Use formatter to round to the floor.
+                val formatter = DecimalFormat("#.##")
+                formatter.roundingMode = RoundingMode.FLOOR
+                return formatter.format(percent).toFloat()
             }
         }
 
