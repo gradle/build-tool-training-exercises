@@ -172,7 +172,7 @@ $ ./gradlew :app:helloFile
 
 Use the Runtime API to wire the input file which is `app/name.txt` and the
 output file which is `app/build/hello.txt`. You can refer to the
-[Runtime API docs](https://docs.gradle.org/current/userguide/more_about_tasks.html#sec:task_input_output_runtime_api)
+[Runtime API docs](https://docs.gradle.org/current/userguide/build_cache.html#using_the_runtime_api)
 for help. If you get stuck refer to [the solution](solution/app/build.gradle.kts).
 
 Now when you run the task twice, the second time it will use the output from
