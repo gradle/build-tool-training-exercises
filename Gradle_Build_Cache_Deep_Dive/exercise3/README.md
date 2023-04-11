@@ -106,7 +106,7 @@ cache.
 $ ./gradlew :app:clean :app:zipUniqueValue
 # Task :app:clean
 # Task :app:generateLocalUniqueValue UP-TO-DATE
-- Task :app:zipUniqueValue FROM-CACHE
+- Task :app:zipUniqueValue
 
 $ ./gradlew :app:clean :app:zipUniqueValue
 # Task :app:clean
