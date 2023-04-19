@@ -131,7 +131,7 @@ Gradle wrapper distributions are stored in the `~/.gradle/wrapper/dists` folder
 in your home directory.
 
 **Note**: You may first have to execute the wrapper script to trigger a download of
-Gradle to the distributions folder by running `./gradlew tasks --all`.
+Gradle to the distributions folder by running `./gradlew :app:run`.
 
 ```
 $ ls -ltr ~/.gradle/wrapper/dists/
