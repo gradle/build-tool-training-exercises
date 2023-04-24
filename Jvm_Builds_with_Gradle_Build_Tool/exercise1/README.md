@@ -123,7 +123,7 @@ sourceSets {
 *Hint:* You want to reference the *task named* `generateMlCode`. For additional
 hints you can refer to the following documentation:
 * [Adding entires to SourceSets](https://docs.gradle.org/current/userguide/building_java_projects.html#sec:custom_java_source_set_paths)
-* [Linking outputs to inputs](https://docs.gradle.org/current/userguide/more_about_tasks.html#sec:link_output_dir_to_input_files)
+* [Linking outputs to inputs](https://docs.gradle.org/current/userguide/incremental_build.html#sec:link_output_dir_to_input_files)
 
 If you get stuck you can refer to the
 [solution](solution/buildSrc/src/main/kotlin/shared-build-conventions.gradle.kts#L68).
