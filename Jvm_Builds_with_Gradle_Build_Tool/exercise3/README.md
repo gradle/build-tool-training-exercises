@@ -33,7 +33,7 @@ Execute the `test` task to see the slow test in action.
 ./gradlew :<subproject>:clean :<subproject>:test
 ```
 
-Create a separate directory under `<subproject>/src` called `intTest`.
+Create a separate directory under `<subproject>/src` called `intTest`, also create `com/gradle/lab` directories under `intTest`.
 Move the slow test to `java/com/gradle/lab` under this directory.
 
 <p align="center">
