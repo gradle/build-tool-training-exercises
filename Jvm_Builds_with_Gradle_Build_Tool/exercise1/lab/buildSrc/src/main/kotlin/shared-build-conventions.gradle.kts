@@ -13,6 +13,7 @@ repositories {
 dependencies {
     implementation("joda-time:joda-time:2.11.1")
     implementation("com.google.guava:guava:31.1-jre")
+    testImplementation("org.seleniumhq.selenium:selenium-java:4.9.0")
 }
 
 tasks.register("sourceSetsInfo") {
@@ -61,3 +62,4 @@ tasks.named<Jar>("jar") {
         manifest.attributes["Main-Class"] = "com.gradle.lab.App"
     }
 }
+
