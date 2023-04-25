@@ -104,6 +104,7 @@ testing {
         val intTest by registering(JvmTestSuite::class) {
             dependencies {
                 implementation(project)
+                implementation("org.seleniumhq.selenium:selenium-java:4.9.0")
             }
         }
     }
