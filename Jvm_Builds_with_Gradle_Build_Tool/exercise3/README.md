@@ -30,7 +30,7 @@ slow test.
 Execute the `test` task to see the slow test in action.
 
 ```bash
-./gradlew :<subproject>:clean :<subproject>:test
+./gradlew :<subproject>:cleanTest :<subproject>:test
 ```
 
 Create a separate directory under `<subproject>/src` called `intTest`, also create `java/com/gradle/lab` directories under `intTest`.
@@ -68,7 +68,7 @@ Verify a new `SourceSet` has been created for the suite:
 Execute the `test` task to see that it runs faster now.
 
 ```bash
-./gradlew :<subproject>:clean :<subproject>:test
+./gradlew :<subproject>:cleanTest :<subproject>:test
 ```
 
 See the new `intTest` task created under the `verification` group:
