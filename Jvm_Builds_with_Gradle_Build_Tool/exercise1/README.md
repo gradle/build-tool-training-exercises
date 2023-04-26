@@ -44,8 +44,7 @@ will be the source file(s) there.
 ---
 ### Code Generation Task
 
-Open the Gradle project in the `lab` folder. In IntelliJ you can do this by
-opening the `settings.gradle.kts` file as a Gradle project.
+Open the Gradle project in the `lab` folder.
 
 Inspect the `<subproject>/src/main/java/com/gradle/lab/<source>` file. You
 will notice it depends on a `Message` class which isn't found.
