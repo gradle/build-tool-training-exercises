@@ -73,10 +73,11 @@ include(":conventions")
 ### Create conventions sub-project
 
 Under the `build-logic` directory, create a `conventions` directory. Put a
-`build.gradle.kts` file there. It should have 2 sections:
+`build.gradle.kts` file there. It should have 3 things:
 
 * Apply `kotlin-dsl` plugin
 * Add `implementation` dependency on jacocolog, android library and kotlin android using the version catalog
+* A helper function to convert depenedency plugin strings to library strings
 
 ```kotlin
 plugins {
@@ -84,10 +85,13 @@ plugins {
 }
 
 dependencies {
-    implementation(libs.jacoco.log)
-    implementation(libs.android.library)
-    implementation(libs.kotlin.android)
+    implementation(plugin(libs.plugins.jacocolog))
+    implementation(plugin(libs.plugins.android.library))
+    implementation(plugin(libs.plugins.kotlin.android))
 }
+
+fun DependencyHandlerScope.plugin(plugin: Provider<PluginDependency>) =
+    plugin.map { "${it.pluginId}:${it.pluginId}.gradle.plugin:${it.version}" }
 ```
 
 Now create `src/main/kotlin` directories.
