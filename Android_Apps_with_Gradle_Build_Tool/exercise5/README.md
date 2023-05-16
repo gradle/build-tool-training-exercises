@@ -196,12 +196,16 @@ Now apply the shared convention plugins to the relevant sub-projects while remov
 the common configuration from the build files. Notice that for the feature
 sub-projects the `namespace` should remain.
 
+For `:math:calc` and `:math:game`:
+
 ```kotlin
 plugins {
    ...
    id("kotlin-test-coverage")
 }
 ```
+
+For `:feature:calc` and `:feature:game`:
 
 ```kotlin
 plugins {
