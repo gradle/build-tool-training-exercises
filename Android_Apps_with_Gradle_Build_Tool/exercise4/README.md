@@ -74,7 +74,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.kts)
+    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
     implementation(libs.androidx.constraintlayout)
@@ -634,3 +634,7 @@ class MainActivity : AppCompatActivity() {
 ```
 
 Press the `Gradle sync` button. You can now run the app and play with it.
+
+<p align="right">
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Android_Apps_with_Gradle_Build_Tool/exercise5">Exercise 5 >></a>
+</p>
