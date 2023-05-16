@@ -213,6 +213,10 @@ Put the following plugin entry in the version catalog:
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version = "1.8.0" }
 ```
 
+Remove any entries added by Android Studio for the above plugin.
+Notice both `kotlin-jvm` and `kotlin-android` are the same version and in fact have to
+always remain the same version. Update them to reference a version.
+
 Now update the top-level `build.gradle.kts` to use the version catalog entry:
 
 ```kotlin
@@ -249,3 +253,7 @@ Test Coverage:
     - Instruction Coverage: 77.6%
     - Complexity Coverage: 57.1%
 ```
+
+<p align="right">
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Android_Apps_with_Gradle_Build_Tool/exercise4">Exercise 4 >></a>
+</p>
