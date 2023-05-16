@@ -167,7 +167,7 @@ android {
 
 val libs = the<VersionCatalogsExtension>().named("libs")
 dependencies {
-    implementation(libs.findLibrary("androidx.core.kts").get())
+    implementation(libs.findLibrary("androidx.core.ktx").get())
     implementation(libs.findLibrary("androidx.appcompat").get())
     implementation(libs.findLibrary("androidx.constraintlayout").get())
     implementation(libs.findLibrary("android.material").get())
