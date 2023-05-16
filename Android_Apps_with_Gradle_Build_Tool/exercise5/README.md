@@ -19,7 +19,7 @@ you will go over the following:
 * You can perform the exercises in the same project used in exercise 4
 
 ---
-### Update version catalog
+### [OPTIONAL] Update version catalog
 
 * Add the jacocolog plugin version `3.1.0` as a library. You can
 reference the information
