@@ -33,7 +33,7 @@ androidPlugin = "7.4.1"
 android-material = { group = "com.google.android.material", name = "material", version.ref = "androidMaterial" }
 androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
 androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
-androidx-core-kts = "androidx.core:core-ktx:1.7.0"
+androidx-core-ktx = "androidx.core:core-ktx:1.7.0"
 androidx-test-espresso = "androidx.test.espresso:espresso-core:3.5.1"
 androidx-test-junit = "androidx.test.ext:junit:1.1.5"
 junit = "junit:junit:4.13.2"
@@ -76,7 +76,7 @@ plugins {
 
 ```kotlin
 dependencies {
-    implementation(libs.androidx.core.kts)
+    implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
     implementation(libs.androidx.constraintlayout)
