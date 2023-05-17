@@ -166,32 +166,11 @@ object Calc {
 package com.gradle.lab.calc
 
 import com.gradle.lab.calc.Calc.evalExpression
-import com.gradle.lab.calc.Calc.isZeroString
-
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertFalse
 import kotlin.test.assertNull
-import kotlin.test.assertTrue
 
 class CalcTest {
-
-    @Test
-    fun zerostring_null() {
-        assertFalse(isZeroString(null), "null should return false")
-    }
-
-    @Test
-    fun zerostring_zeros() {
-        assertTrue(isZeroString("0000"), "0000 should return true")
-        assertTrue(isZeroString("  0000  "), "0000 with whitespace should return true")
-    }
-
-    @Test
-    fun zerostring_other() {
-        assertFalse(isZeroString("0000."), "other text should return false")
-        assertFalse(isZeroString("5+0"), "other text should return false")
-    }
 
     @Test
     fun eval_good() {
@@ -200,6 +179,46 @@ class CalcTest {
         assertEquals("6", evalExpression("2*3"))
         assertEquals("3", evalExpression("9/3"))
         assertNull(evalExpression("2+3*"), "invalid input")
+    }
+}
+```
+
+* Add code for `math/calc/src/test/java/com/gradle/lab/calc/ZeroStringTest.kt`:
+
+```kotlin
+package com.gradle.lab.calc
+
+import com.gradle.lab.calc.Calc.isZeroString
+import org.junit.Test
+import org.junit.runner.RunWith
+import org.junit.runners.Parameterized
+import kotlin.test.assertEquals
+
+@RunWith(Parameterized::class)
+class ZeroStringTest(private val input: String?, private val expected: Boolean) {
+
+    companion object {
+        @JvmStatic
+        @Parameterized.Parameters(name = "{index}: input={0}, expected={1}")
+        fun data(): Collection<Array<Any?>> {
+            return listOf(
+                arrayOf("0000", true),
+                arrayOf("0", true),
+                arrayOf("  0000  ", true),
+                arrayOf(null, false),
+                arrayOf("0000.", false),
+                arrayOf("5+0", false),
+                arrayOf("", false),
+                arrayOf(" ", false),
+                arrayOf("0001", false),
+                arrayOf("  000abc000  ", false),
+            )
+        }
+    }
+
+    @Test
+    fun testIsZeroString() {
+        assertEquals(isZeroString(input), expected, "$input should return $expected")
     }
 }
 ```
