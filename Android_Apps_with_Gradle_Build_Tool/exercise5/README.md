@@ -15,8 +15,8 @@ you will go over the following:
 ---
 ### Prerequisites
 
-* Completed exercise 4
-* You can perform the exercises in the same project used in exercise 4
+* Completed exercise 2 and optionally exercises 3 and 4
+* Open the [exercise 4 solution](../exercise4_optional/solution) project and perform the exercise in there
 
 ---
 ### [OPTIONAL] Update version catalog
