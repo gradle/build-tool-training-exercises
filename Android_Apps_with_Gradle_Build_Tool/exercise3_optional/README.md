@@ -255,5 +255,5 @@ Test Coverage:
 ```
 
 <p align="right">
-<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Android_Apps_with_Gradle_Build_Tool/exercise4">Exercise 4 >></a>
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Android_Apps_with_Gradle_Build_Tool/exercise4_optional">Exercise 4 >></a>
 </p>
