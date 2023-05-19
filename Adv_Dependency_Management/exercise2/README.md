@@ -151,3 +151,7 @@ dependencies {
     implementation("com.google.inject:guice:5.1.0")
 }
 ```
+
+<p align="right">
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Adv_Dependency_Management/exercise3">Exercise 3 >></a>
+</p>

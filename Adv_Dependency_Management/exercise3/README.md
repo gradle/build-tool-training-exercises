@@ -70,3 +70,7 @@ constraint added to the `compileClasspath`
 <p align="center">
 <img width="70%" height="70%" src="https://user-images.githubusercontent.com/120980/208413886-6cb15399-a1b8-4daf-a4aa-5db039c004de.png">
 </p>
+
+<p align="right">
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Adv_Dependency_Management/exercise4">Exercise 4 >></a>
+</p>

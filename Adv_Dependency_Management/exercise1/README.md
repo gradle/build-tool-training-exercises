@@ -125,3 +125,7 @@ for the `app` subproject:
 Notice the `json` dependency appears in both dependency configurations.
 Dependencies in the `api` configuration are used both during compilation
 and execution of downstream projects.
+
+<p align="right">
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Adv_Dependency_Management/exercise2">Exercise 2 >></a>
+</p>

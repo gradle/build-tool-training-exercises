@@ -78,3 +78,7 @@ effect:
 ./gradlew :app:dependencies --write-locks
 ./gradlew :app:dependencies
 ```
+
+<p align="right">
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Adv_Dependency_Management/exercise5">Exercise 5 >></a>
+</p>
