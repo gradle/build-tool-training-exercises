@@ -1,5 +1,6 @@
 plugins {
     `java-library`
+    id("shared-tasks-convention")
 }
 
 repositories {
