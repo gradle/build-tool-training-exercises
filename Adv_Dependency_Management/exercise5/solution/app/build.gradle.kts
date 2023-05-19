@@ -1,5 +1,6 @@
 plugins {
     application
+    id("shared-tasks-convention")
 }
 
 repositories {
