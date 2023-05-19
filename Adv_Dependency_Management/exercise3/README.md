@@ -68,7 +68,7 @@ constraint added to the `compileClasspath`
 ```
 
 <p align="center">
-<img width="70%" height="70%" src="https://user-images.githubusercontent.com/120980/208413886-6cb15399-a1b8-4daf-a4aa-5db039c004de.png">
+<img width="90%" height="90%" src="https://user-images.githubusercontent.com/120980/208413886-6cb15399-a1b8-4daf-a4aa-5db039c004de.png">
 </p>
 
 <p align="right">
