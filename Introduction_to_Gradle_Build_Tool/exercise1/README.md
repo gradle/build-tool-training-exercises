@@ -90,19 +90,9 @@ drwxr-xr-x  4 adayal  staff   128 May 12 06:38 app
 ```
 
 ---
-### Open Project in IntelliJ IDE and Explore Files
+### Open Project in Editor and Explore Files
 
-Launch IntelliJ and open the `settings.gradle.kts` file as a project.
-
-<p align="center">
-<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174327155-818c016b-3f7b-496d-97c9-2a6ad7e905c3.png">
-</p>
-
-If asked to trust the file, say yes.
-
-<p align="center">
-<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174327312-93cdc714-9a78-47b0-86a0-d1ca72ce86df.png">
-</p>
+Launch your Editor and open the `lab` folder.
 
 Look at the following files:
 * `settings.gradle.kts`
