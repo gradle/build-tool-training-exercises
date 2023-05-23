@@ -31,10 +31,11 @@ for the questions:
 * Language: Java
 * Split functionality across multiple subprojects?: no
 * Build script DSL: Kotlin
-* Use new APIs?: no
 * Test framework: JUnit Jupiter
 * Project name: lab
 * Source package: com.gradle.lab
+* Java version: Execute `java -version` to find version
+* Use new APIs?: no
 
 ```
 $ gradle init
@@ -55,17 +56,12 @@ Select implementation language:
   6: Swift
 Enter selection (default: Java) [1..6] 
 
-Split functionality across multiple subprojects?:
-  1: no - only one application project
-  2: yes - application and library projects
-Enter selection (default: no - only one application project) [1..2] 
-
+Generate multiple subprojects for application? (default: no) [yes, no] 
 Select build script DSL:
   1: Groovy
   2: Kotlin
 Enter selection (default: Groovy) [1..2] 2
 
-Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no] 
 Select test framework:
   1: JUnit 4
   2: TestNG
@@ -74,7 +70,9 @@ Select test framework:
 Enter selection (default: JUnit Jupiter) [1..4] 
 
 Project name (default: lab): 
-Source package (default: solution): com.gradle.lab
+Source package (default: lab): com.gradle.lab
+Enter target version of Java (min. 7) (default: 11):
+Generate build using new APIs and behavior (some features may change in the next minor release)? (default: no) [yes, no]
 ```
 
 Ensure the generated files in the solution directory look as follows:
