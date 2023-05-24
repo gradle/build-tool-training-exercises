@@ -152,7 +152,7 @@ pass arguments.
 <img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174329705-c903cd1b-0ee3-4757-afaf-9782e8fac843.png">
 </p>
 
-Open the terminal in the IDE in the lower toolbar. Run `./gradlew tiTree test`
+Open the terminal in the IDE in the lower toolbar. Run `./gradlew :app:tiTree :app:test`
 to see the dependencies for the test task.
 
 <p align="center">
