@@ -10,3 +10,6 @@ during the live training to get you going on your journey.
 
 The exercises are progressive, each one building upon the previous. You can
 continue to use the same workspace throughout the exercises.
+
+If you are using Gradle Build Tool version 7 refer to the [7.x](7.x/) exercises.
+For Gradle Build Tool version 8 refer to the [8.x](8.x/) exercises.
