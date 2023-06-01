@@ -80,10 +80,10 @@ class CoveragelockPlugin: Plugin<Project> {
      */
     private fun registerTask(project: Project, extension: CoverageLockInExtension) {
         project.tasks.register("lockInCoverageGains", CoverageLockInTask::class.java) { task ->
-            task.counter.set(extension.counter.get())
-            task.goal.set(extension.goal.get())
-            task.onCi.set(extension.onCi.get())
-            task.coverageFile.set(extension.coverageFile.get())
+            task.counter.set(extension.counter)
+            task.goal.set(extension.goal)
+            task.onCi.set(extension.onCi)
+            task.coverageFile.set(extension.coverageFile)
             task.reportXmlFile.set(
                 project.tasks.named("jacocoTestReport", JacocoReport::class.java)
                     .map { it.reports.xml.outputLocation.get() }
