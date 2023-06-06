@@ -34,6 +34,8 @@ android {
 
 dependencies {
     implementation(libs.bundles.androidx.core)
+    implementation(project(":feature:calc"))
+    implementation(project(":feature:game"))
 
     testImplementation(libs.junit)
 
