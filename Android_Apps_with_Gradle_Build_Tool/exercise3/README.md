@@ -21,9 +21,9 @@ you will go over the following:
 ---
 ### Create build-logic project
 
-Create a top-level directory called `build-logic`. Under there create another
-directory called `conventions.` Create files called `build-logic/settings.gradle.kts`
-and `build-logic/conventions/build.gradle.kts`.
+* Create a top-level directory called `build-logic`
+* Under there create another directory called `conventions.`
+* Create files called `build-logic/settings.gradle.kts` and `build-logic/conventions/build.gradle.kts`.
 
 ```
 ├── build-logic
