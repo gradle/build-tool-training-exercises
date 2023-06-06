@@ -1,7 +1,9 @@
 [versions]
 androidMaterial = "1.8.0"
+
 # Plugin versions
 androidPlugin = "7.4.1"
+kotlinPlugin = "1.8.0"
 
 [libraries]
 # Just to show how to use version.ref in libraries
@@ -9,6 +11,7 @@ android-material = { group = "com.google.android.material", name = "material", v
 androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
 androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
 androidx-core-ktx = "androidx.core:core-ktx:1.7.0"
+exp4j = "net.objecthunter:exp4j:0.4.8"
 
 # Test dependencies
 junit = "junit:junit:4.13.2"
@@ -22,4 +25,6 @@ androidx-tests = ["androidx-test-junit", "androidx-test-espresso"]
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidPlugin" }
 android-library = { id = "com.android.library", version.ref = "androidPlugin" }
-kotlin-android = { id = "org.jetbrains.kotlin.android" , version = "1.8.0" }
+kotlin-android = { id = "org.jetbrains.kotlin.android" , version.ref = "kotlinPlugin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinPlugin" }
+jacocolog = { id = "org.barfuin.gradle.jacocolog", version = "3.1.0" }

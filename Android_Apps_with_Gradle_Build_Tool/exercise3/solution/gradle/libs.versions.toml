@@ -1,7 +1,10 @@
 [versions]
 androidMaterial = "1.8.0"
+
 # Plugin versions
 androidPlugin = "7.4.1"
+jacocolog = "3.1.0"
+kotlinPlugin = "1.8.0"
 
 [libraries]
 # Just to show how to use version.ref in libraries
@@ -9,11 +12,17 @@ android-material = { group = "com.google.android.material", name = "material", v
 androidx-appcompat = "androidx.appcompat:appcompat:1.6.1"
 androidx-constraintlayout = "androidx.constraintlayout:constraintlayout:2.1.4"
 androidx-core-ktx = "androidx.core:core-ktx:1.7.0"
+exp4j = "net.objecthunter:exp4j:0.4.8"
 
 # Test dependencies
 junit = "junit:junit:4.13.2"
 androidx-test-espresso = "androidx.test.espresso:espresso-core:3.5.1"
 androidx-test-junit = "androidx.test.ext:junit:1.1.5"
+
+# Plugins - just to show how to do it this way
+jacoco-log = { module = "org.barfuin.gradle.jacocolog:org.barfuin.gradle.jacocolog.gradle.plugin", version.ref = "jacocolog" }
+android-library = { module = "com.android.library:com.android.library.gradle.plugin",  version.ref = "androidPlugin" }
+kotlin-android = { module = "org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin", version.ref = "kotlinPlugin" }
 
 [bundles]
 androidx-core = ["android-material", "androidx-appcompat", "androidx-constraintlayout", "androidx-core-ktx"]
@@ -22,4 +31,6 @@ androidx-tests = ["androidx-test-junit", "androidx-test-espresso"]
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidPlugin" }
 android-library = { id = "com.android.library", version.ref = "androidPlugin" }
-kotlin-android = { id = "org.jetbrains.kotlin.android" , version = "1.8.0" }
+kotlin-android = { id = "org.jetbrains.kotlin.android" , version.ref = "kotlinPlugin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlinPlugin" }
+jacocolog = { id = "org.barfuin.gradle.jacocolog", version.ref = "jacocolog" }

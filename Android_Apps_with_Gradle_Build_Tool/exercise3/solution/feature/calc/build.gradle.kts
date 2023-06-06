@@ -1,20 +1,18 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.gradle.lab.mycalculator"
+    namespace = "com.gradle.lab.calc"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.gradle.lab.mycalculator"
         minSdk = 24
         targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -34,6 +32,7 @@ android {
 
 dependencies {
     implementation(libs.bundles.androidx.core)
+    implementation(project(":math:calc"))
 
     testImplementation(libs.junit)
 

@@ -96,5 +96,5 @@ correctly configured. If there is an issue refer to the
 </p>
 
 <p align="right">
-<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Android_Apps_with_Gradle_Build_Tool/exercise3_optional">Exercise 3 >></a>
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Android_Apps_with_Gradle_Build_Tool/exercise3">Exercise 3 >></a>
 </p>

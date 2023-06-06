@@ -1,20 +1,17 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.gradle.lab.mycalculator"
     compileSdk = 33
 
     defaultConfig {
-        applicationId = "com.gradle.lab.mycalculator"
         minSdk = 24
         targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -32,10 +29,11 @@ android {
     }
 }
 
+val libs = the<VersionCatalogsExtension>().named("libs")
 dependencies {
-    implementation(libs.bundles.androidx.core)
+    implementation(libs.findBundle("androidx.core").get())
+    
+    testImplementation(libs.findLibrary("junit").get())
 
-    testImplementation(libs.junit)
-
-    androidTestImplementation(libs.bundles.androidx.tests)
+    androidTestImplementation(libs.findBundle("androidx.tests").get())
 }
