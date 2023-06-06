@@ -1,4 +1,4 @@
-## Android Apps with Gradle Build Tool - Exercise 5
+## Android Apps with Gradle Build Tool - Exercise 3
 
 <p align="left">
 <img width="10%" height="10%" src="https://user-images.githubusercontent.com/120980/174325546-8558160b-7f16-42cb-af0f-511849f22ebc.png">
