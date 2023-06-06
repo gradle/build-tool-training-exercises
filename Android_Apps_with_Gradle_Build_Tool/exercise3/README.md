@@ -116,6 +116,9 @@ tasks.named<JacocoCoverageVerification>("jacocoTestCoverageVerification") {
 tasks.named("check") {
     dependsOn("jacocoTestCoverageVerification")
 }
+tasks.named("check") {
+    dependsOn("jacocoTestReport")
+}
 ```
 
 ### Apply shared configuration
