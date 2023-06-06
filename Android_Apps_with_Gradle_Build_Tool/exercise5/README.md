@@ -21,20 +21,11 @@ you will go over the following:
 ---
 ### [OPTIONAL] Update version catalog
 
-* Add the jacocolog plugin version `3.1.0` as a library. You can
-reference the information
-[here](https://mvnrepository.com/artifact/org.barfuin.gradle.jacocolog/org.barfuin.gradle.jacocolog.gradle.plugin/3.0.0-RC2) to figure out the group and name
-* Add the [android library plugin](https://maven.google.com/web/index.html?q=android.library.gradle.plugin#com.android.library:com.android.library.gradle.plugin:7.4.1)
-as a library
-* Add the [kotlin library plugin](https://mvnrepository.com/artifact/org.jetbrains.kotlin.android/org.jetbrains.kotlin.android.gradle.plugin/1.8.0)
-as a library
+* Add the jacocolog plugin version `3.1.0` as a library
+* Add the android library plugin as a library
+* Add the kotlin library plugin as a library
 
-Hint:
-```text
-jacoco-log = { module = "org.barfuin.gradle.jacocolog:org.barfuin.gradle.jacocolog.gradle.plugin", version.ref = "jacocolog" }
-android-library = { module = "com.android.library:com.android.library.gradle.plugin",  version.ref = "androidPlugin" }
-kotlin-android = { module = "org.jetbrains.kotlin.android:org.jetbrains.kotlin.android.gradle.plugin", version.ref = "kotlinAndroid" }
-```
+*Hint*: The module ID will be of the format `pluginId:pluginId.gradle.plugin`
 
 If you get stuck you can refer to the [solution](solution/gradle/libs.versions.toml).
 
