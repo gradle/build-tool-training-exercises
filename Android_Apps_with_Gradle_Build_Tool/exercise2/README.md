@@ -61,17 +61,6 @@ plugins {
 }
 ```
 
-Update the `app/build.gradle.kts` file as follows:
-
-* Switch the apply plugin section to use the version catalog
-
-```kotlin
-plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
-}
-```
-
 * Switch the dependencies section to use the version catalog
 
 ```kotlin
