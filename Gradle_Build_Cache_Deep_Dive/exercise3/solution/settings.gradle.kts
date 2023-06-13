@@ -27,9 +27,10 @@ include("app")
 buildCache {
     local {
         removeUnusedEntriesAfterDays = 30
-        isEnabled = false
+        isEnabled = true
     }
     remote<HttpBuildCache> {
+        isEnabled = false
         url = uri("https://enterprise-training.gradle.com/cache/")
         isPush = true
         credentials {
