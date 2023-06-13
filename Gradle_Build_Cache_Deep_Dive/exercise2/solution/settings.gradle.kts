@@ -15,6 +15,9 @@ gradleEnterprise {
         capture {
             isTaskInputFiles = true
         }
+        obfuscation {
+            ipAddresses { addresses -> addresses.map { "0.0.0.0" } }
+        }
     }
 }
 
