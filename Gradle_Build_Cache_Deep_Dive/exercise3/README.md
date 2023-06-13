@@ -153,8 +153,8 @@ Now add the following task to the `app` subproject:
 
 ```kotlin
 tasks.register<Exec>("helloFile") {
-    workingDir = layout.buildDirectory.asFile.get()
-    commandLine("bash", "-c", "person=`cat ../name.txt`; echo \"hello \$person\" > hello.txt")
+    workingDir = layout.projectDirectory.asFile
+    commandLine("bash", "-c", "mkdir -p build; person=`cat name.txt`; echo \"hello \$person\" > build/hello.txt")
 }
 ```
 
