@@ -173,7 +173,7 @@ $ ./gradlew :app:test
 > Task :app:test UP-TO-DATE
 ```
 
-If you use the **-i** argument you can see the cache key used for each
+If you use the **-i** flag you can see the cache key used for each
 task input. Run a clean followed by the tests to see this.
 
 ```bash
@@ -188,6 +188,13 @@ Task ':app:test' is not up-to-date because:
   Output property 'binaryResultsDirectory' file /Users/.../exercise1/lab/app/build/test-results/test/binary/output.bin has been removed.
   Output property 'binaryResultsDirectory' file /Users/.../exercise1/lab/app/build/test-results/test/binary/output.bin.idx has been removed.
 Loaded cache entry for task ':app:test' with cache key a9c53b883c4efdde1f278be0947511f7
+```
+
+You can also use the **-Dorg.gradle.caching.debug=true** flag to view more details.
+
+```bash
+$ ./gradlew :app:clean
+$ ./gradlew :app:test -Dorg.gradle.caching.debug=true
 ```
 
 You can see the cache entries by looking in the cache directory:
