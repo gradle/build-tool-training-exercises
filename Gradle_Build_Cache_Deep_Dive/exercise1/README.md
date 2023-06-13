@@ -193,8 +193,7 @@ Loaded cache entry for task ':app:test' with cache key a9c53b883c4efdde1f278be09
 You can also use the **-Dorg.gradle.caching.debug=true** flag to view more details.
 
 ```bash
-$ ./gradlew :app:clean
-$ ./gradlew :app:test -Dorg.gradle.caching.debug=true
+$ ./gradlew :app:clean :app:test -Dorg.gradle.caching.debug=true
 ```
 
 You can see the cache entries by looking in the cache directory:
