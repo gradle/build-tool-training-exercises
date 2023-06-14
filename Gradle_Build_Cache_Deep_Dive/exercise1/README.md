@@ -219,6 +219,18 @@ buildCache {
 }
 ```
 
+Alternatively you can put this setting in the `~/.gradle/init.gradle.kts` file:
+
+```kotlin
+gradle.settingsEvaluated {
+     buildCache {
+        local {
+            removeUnusedEntriesAfterDays = 30
+        }
+    }
+}
+```
+
 Run a clean then the tests to make sure there was no mistake in the configuration:
 
 ```diff
