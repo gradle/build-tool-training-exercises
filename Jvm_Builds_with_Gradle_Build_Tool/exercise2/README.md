@@ -74,7 +74,7 @@ tasks.named<JavaCompile>("compileExtraJava") {
 ```
 
 *Hint:* You can refer to
-[this documentation](https://docs.gradle.org/current/userguide/toolchains.html#specify_custom_toolchains_for_individual_tasks).
+[this documentation](https://docs.gradle.org/current/userguide/toolchains.html#toolchains_for_tasks).
 If you get stuck you can refer to the
 [solution](solution/buildSrc/src/main/kotlin/shared-build-conventions.gradle.kts#L86).
 
