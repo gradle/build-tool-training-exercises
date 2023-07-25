@@ -7,6 +7,10 @@
  * in the user manual at https://docs.gradle.org/7.4.2/userguide/multi_project_builds.html
  */
 
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.6.0"
+}
+
 rootProject.name = "lab"
 include("app")
 include("model")

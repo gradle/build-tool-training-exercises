@@ -14,7 +14,7 @@ public class App {
 
     public String getUrl() {
         // This is a small website and easily prints.
-        return "https://wiby.me/";
+        return "https://www.wiby.me/";
     }
 
     public static void main(String[] args) throws IOException {

@@ -8,6 +8,6 @@ public class AppModel {
 
   public String getUrl() {
     // This is a small website and easily prints.
-    return "https://wiby.me/";
+    return "https://www.wiby.me/";
   }
 }
