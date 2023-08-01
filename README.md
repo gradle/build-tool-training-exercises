@@ -1,5 +1,5 @@
 <img width="100%" src="https://user-images.githubusercontent.com/120980/177269735-86679bb2-d86e-4827-a4bf-b4db43681d0d.png">
-<img width="100%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/20f25c16-24e1-4ebe-87c5-85ebf838e755">
+<img width="100%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/0e3a6bbf-655f-4962-bb13-b0e08fa86959">
 
 This repository has hands-on exercises that are used in the live instructor-led
 training sessions for the Gradle Build Tool hosted by Gradle Inc.
