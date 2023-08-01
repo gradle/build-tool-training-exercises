@@ -1,0 +1,9 @@
+[libraries]
+guava = "com.google.guava:guava:30.1.1-jre"
+google-http-client = "com.google.http-client:google-http-client:1.41.8"
+
+# Test dependencies
+junit-jupiter = "org.junit.jupiter:junit-jupiter:5.8.1"
+
+[plugins]
+taskinfo = { id = "org.barfuin.gradle.taskinfo", version = "2.1.0" }

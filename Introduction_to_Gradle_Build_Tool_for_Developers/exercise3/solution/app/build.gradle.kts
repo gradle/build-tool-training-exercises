@@ -9,6 +9,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+    alias(libs.plugins.taskinfo)
 }
 
 repositories {
@@ -18,11 +19,11 @@ repositories {
 
 dependencies {
     // Use JUnit Jupiter for testing.
-    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation(libs.junit.jupiter)
 
     // This dependency is used by the application.
-    implementation("com.google.guava:guava:30.1.1-jre")
-    implementation("com.google.http-client:google-http-client:1.41.8")
+    implementation(libs.guava)
+    implementation(libs.google.http.client)
 }
 
 application {
@@ -33,34 +34,4 @@ application {
 tasks.named<Test>("test") {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
-}
-
-tasks.register("testWithMsg") {
-    group = "verification"
-    description = "Runs tests and prints msg when done"
-    dependsOn("test")
-
-    doLast {
-        println("Tests done!")
-    }
-}
-
-tasks.register("msgAfterTest") {
-    group = "verification"
-    description = "Prints msg when tests are done"
-
-    doLast {
-        println("Tests done!!")
-    }
-}
-
-tasks.named("test") {
-    finalizedBy("msgAfterTest")
-}
-
-tasks.register<Copy>("backupTestXml") {
-    from("build/test-results/test")
-    into("/tmp/")
-
-    exclude("binary/**")
 }

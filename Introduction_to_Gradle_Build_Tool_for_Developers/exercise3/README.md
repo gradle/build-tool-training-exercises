@@ -146,7 +146,17 @@ contents are also printed.
 ### Create Version Catalog
 
 In the `gradle` folder create a file called `libs.versions.toml`. Add all the
-dependency modules to it.
+dependency modules to it under the `libraries` section.
+Also add the taskinfo plugin under the `plugins` section.
 
-Update the dependencies to use the version catalog.
-If you get stuck you can refer to the solution.
+```text
+[libraries]
+...
+...
+
+[plugins]
+...
+```
+
+Update the dependencies to use the version catalog. Also update the plugin section.
+If you get stuck you can refer to the [solution](solution/gradle/libs.versions.toml).
