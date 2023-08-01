@@ -1,11 +1,11 @@
-## Introduction to Gradle Build Tool - Exercise 1
+## Introduction to Gradle Build Tool for Developers - Exercise 1
 
 <p align="left">
 <img width="10%" height="10%" src="https://user-images.githubusercontent.com/120980/174325546-8558160b-7f16-42cb-af0f-511849f22ebc.png">
 </p>
 
 This is a hands-on exercise to go along with the
-**Introduction to Gradle Build Tool** training module. In this exercise
+**Introduction to Gradle Build Tool for Developers** training module. In this exercise
 you will get familiar with the following topics:
 
 * Initializing new Gradle project
@@ -128,5 +128,5 @@ drwxr-xr-x  3 adayal  staff  96 May 12 07:02 gradle-7.4.2-bin
 ```
 
 <p align="right">
-<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Introduction_to_Gradle_Build_Tool/exercise2">Exercise 2 >></a>
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Introduction_to_Gradle_Build_Tool_for_Developers/exercise2">Exercise 2 >></a>
 </p>

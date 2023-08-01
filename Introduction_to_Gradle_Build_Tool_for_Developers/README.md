@@ -1,10 +1,10 @@
-## Introduction to Gradle Build Tool - Exercises
+## Introduction to Gradle Build Tool for Developers - Exercises
 
 <p align="left">
 <img width="10%" height="10%" src="https://user-images.githubusercontent.com/120980/174325546-8558160b-7f16-42cb-af0f-511849f22ebc.png">
 </p>
 
-These are the exercises for the **Introduction to Gradle Build Tool**
+These are the exercises for the **Introduction to Gradle Build Tool for Developers**
 training course. They are designed to give you hands-on experience
 during the live training to get you going on your journey.
 
@@ -14,5 +14,5 @@ to use a different workspace for each one, there are Gradle projects provided
 in the `lab` folders in each exercise.
 
 <p align="right">
-<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Introduction_to_Gradle_Build_Tool/exercise1">Exercise 1 >></a>
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Introduction_to_Gradle_Build_Tool_for_Developers/exercise1">Exercise 1 >></a>
 </p>

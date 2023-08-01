@@ -1,16 +1,18 @@
-## Introduction to Gradle Build Tool - Exercise 3
+## Introduction to Gradle Build Tool for Developers - Exercise 3
 
 <p align="left">
 <img width="10%" height="10%" src="https://user-images.githubusercontent.com/120980/174325546-8558160b-7f16-42cb-af0f-511849f22ebc.png">
 </p>
 
 This is a hands-on exercise to go along with the
-**Introduction to Gradle Build Tool** training module. In this exercise
+**Introduction to Gradle Build Tool for Developers** training module. In this exercise
 you will get familiar with the following topics:
 
 * See dependencies for a project
 * Adding dependencies
 * Examining dependency conflict resolution
+* Creating a version catalog
+* Updating build files to use the catalog
 
 ---
 ### Prerequisites
@@ -139,3 +141,12 @@ contents are also printed.
 <p align="right">
 <a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Introduction_to_Gradle_Build_Tool/exercise4">Exercise 4 >></a>
 </p>
+
+---
+### Create Version Catalog
+
+In the `gradle` folder create a file called `libs.versions.toml`. Add all the
+dependency modules to it.
+
+Update the dependencies to use the version catalog.
+If you get stuck you can refer to the solution.
