@@ -66,7 +66,7 @@ tasks.named("test") {
 
 tasks.register<Copy>("backupTestXml") {
     from("build/test-results/test")
-    into("/tmp/")
+    into("/tmp/results/")
 
     exclude("binary/**")
 }

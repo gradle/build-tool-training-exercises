@@ -131,7 +131,7 @@ Refer to the [Copy Task docs](https://docs.gradle.org/current/dsl/org.gradle.api
 for help. The task will:
 
 1. Be called `backupTestXml`
-2. Copy from the `build/test-results/test/` directory into `/tmp/`
+2. Copy from the `build/test-results/test/` directory into `/tmp/results/`
 3. Exclude the `binary` directory (*hint*: use pattern `binary/**`)
 
 ```kotlin
