@@ -17,7 +17,7 @@ you will get familiar with the following topics:
 
 * JDK 1.8+ and Gradle build tool installed
   * https://gradle.org/install/
-* IntelliJ IDE
+* A good editor such as IntelliJ IDE
   * https://www.jetbrains.com/idea/download/
 
 ---
