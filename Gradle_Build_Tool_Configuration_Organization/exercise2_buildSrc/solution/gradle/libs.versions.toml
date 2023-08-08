@@ -1,0 +1,12 @@
+[versions]
+# Plugin versions
+jacocolog = "3.1.0"
+
+[libraries]
+guava = "com.google.guava:guava:32.1.2-jre"
+
+# Plugins - just to show how to do it this way
+jacoco-log = { module = "org.barfuin.gradle.jacocolog:org.barfuin.gradle.jacocolog.gradle.plugin", version.ref = "jacocolog" }
+
+[plugins]
+jacocolog = { id = "org.barfuin.gradle.jacocolog", version.ref = "jacocolog" }
