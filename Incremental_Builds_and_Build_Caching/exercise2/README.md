@@ -1,4 +1,4 @@
-## Gradle Build Cache Deep Dive - Exercise 2
+## Incremental Builds and Build Caching - Exercise 2
 
 <p align="left">
 <img width="10%" height="10%" src="https://user-images.githubusercontent.com/120980/174325546-8558160b-7f16-42cb-af0f-511849f22ebc.png">
@@ -184,8 +184,4 @@ which caused the cache miss.
 
 <p align="center">
 <img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/177334631-5c94bbc3-5279-4fee-b202-ab4dc0599e17.png">
-</p>
-
-<p align="right">
-<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Gradle_Build_Cache_Deep_Dive/exercise3">Exercise 3 >></a>
 </p>

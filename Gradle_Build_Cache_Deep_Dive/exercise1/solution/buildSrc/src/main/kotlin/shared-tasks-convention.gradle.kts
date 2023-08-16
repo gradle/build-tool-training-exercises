@@ -26,3 +26,28 @@ listOf("compileJava", "compileTestJava", "test").forEach {
             .withPropertyName("uniqueValue")
     }
 }
+
+tasks.register<Zip>("zipUniqueValue") {
+    // Inputs
+    from(tasks.named("generateLocalUniqueValue"))
+
+    // Outputs
+    destinationDirectory.set(layout.buildDirectory)
+    archiveFileName.set("unique.zip")
+    // Enable working with cache.
+    outputs.cacheIf { true }
+}
+
+tasks.register<Exec>("helloFile") {
+    workingDir = layout.projectDirectory.asFile
+    commandLine("bash", "-c", "mkdir -p build; person=`cat name.txt`; echo \"hello \$person\" > build/hello.txt")
+
+    inputs.file(layout.projectDirectory.file("name.txt"))
+        .withPropertyName("helloInput")
+        .withPathSensitivity(PathSensitivity.RELATIVE)
+
+    outputs.file(layout.buildDirectory.file("hello.txt"))
+        .withPropertyName("helloOutput")
+
+    outputs.cacheIf { true }
+}

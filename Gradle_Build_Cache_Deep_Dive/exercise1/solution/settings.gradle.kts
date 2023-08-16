@@ -6,6 +6,20 @@
  * Detailed information about configuring a multi-project build in Gradle can be found
  * in the user manual at https://docs.gradle.org/7.4.2/userguide/multi_project_builds.html
  */
+plugins {
+    id("com.gradle.enterprise") version "3.8"
+}
+gradleEnterprise {
+    buildScan {
+        server = "https://enterprise-training.gradle.com"
+        capture {
+            isTaskInputFiles = true
+        }
+        obfuscation {
+            ipAddresses { addresses -> addresses.map { "0.0.0.0" } }
+        }
+    }
+}
 
 rootProject.name = "lab"
 include("app")
@@ -13,5 +27,15 @@ include("app")
 buildCache {
     local {
         removeUnusedEntriesAfterDays = 30
+        isEnabled = true
+    }
+    remote<HttpBuildCache> {
+        isEnabled = false
+        url = uri("https://enterprise-training.gradle.com/cache/")
+        isPush = true
+        credentials {
+            username = System.getenv("CACHE_USERNAME")
+            password = System.getenv("CACHE_PASSWORD")
+        }
     }
 }
