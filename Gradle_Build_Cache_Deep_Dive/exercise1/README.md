@@ -25,9 +25,11 @@ you will go over the following:
     * Strongly recommend taking *Incremental Builds and Build Caching* training first
 
 ---
-### Disable Remote Cache
+### Note that Remote Cache is Disabled
 
-Update the `settings.gradle.kts` file to disable the remote cache and enable the local cache:
+In the `settings.gradle.kts` file notice that the local cache is enabled while the
+remote cache is disabled. Feel free to enable the remote cache if you want to use
+build scan comparison to help analyze cache information.
 
 ```kotlin
 buildCache {
@@ -49,7 +51,7 @@ Custom tasks based on the `Zip` task type will already have wiring for inputs
 and outputs. The task works for incremental builds, you just have to configure
 it to work with caches.
 
-Add the following task to the `app` subproject:
+In `shared-tasks-convention` notice there is a `zipUniqueValue` task:
 
 ```kotlin
 tasks.register<Zip>("zipUniqueValue") {
@@ -156,7 +158,7 @@ enable caching for the task.
 Create a file in the `app` subproject called `name.txt` and put your full name
 as the contents of the file.
 
-Now add the following task to the `app` subproject:
+In `shared-tasks-convention` notice there is a `helloFile` task:
 
 ```kotlin
 tasks.register<Exec>("helloFile") {
@@ -165,7 +167,7 @@ tasks.register<Exec>("helloFile") {
 }
 ```
 
-Now run the task twice, you will see that it always exeutes the action. It
+Run the task twice, you will see that it always executes the action. It
 doesn't even have incremental build support. This is because Gradle doesn't
 know what the inputs and outputs are.
 
