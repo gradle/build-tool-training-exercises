@@ -17,8 +17,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
 
-    private static final File RESOURCES_DIR = new File("src/test/resources");
-
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");

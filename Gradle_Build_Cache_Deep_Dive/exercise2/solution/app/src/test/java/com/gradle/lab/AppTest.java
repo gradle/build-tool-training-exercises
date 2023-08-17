@@ -22,15 +22,16 @@ class AppTest {
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
 
-    /*@Test void writeToResourcesDir() throws IOException {
+    @Test void writeToResourcesDir() throws IOException {
         Random rand = new Random();
         int timeTaken = rand.nextInt(1000000);
 
         ClassLoader classLoader = getClass().getClassLoader();
         File file = new File(classLoader.getResource("data.txt").getFile());
-        String outputFilePath = file.getAbsolutePath().replace("data", "output");
+        String outputFilePath = file.getAbsolutePath().replace("resources/test/data.txt", "output/output.txt");
+        new File(outputFilePath).getParentFile().mkdirs();
         BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath.toString()));
         writer.write("Time taken: " + timeTaken + " seconds");
         writer.close();
-    }*/
+    }
 }

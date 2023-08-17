@@ -51,12 +51,12 @@ tasks.register<Exec>("helloFile") {
 /*
 Writes to a file build/info.txt.
  */
-/*tasks.register("genTestInfo") {
-    outputs.file(layout.buildDirectory.file("hello.txt"))
+tasks.register("genTestInfo") {
+    outputs.file(layout.buildDirectory.file("info.txt"))
         .withPropertyName("outputFile")
 
     doLast {
-        val file: Provider<RegularFile> = layout.buildDirectory.file("hello.txt")
+        val file: Provider<RegularFile> = layout.buildDirectory.file("info.txt")
 
         val printWriter: PrintWriter = PrintWriter(FileWriter(file.get().asFile))
         printWriter.println("some info")
@@ -66,7 +66,7 @@ Writes to a file build/info.txt.
 
 tasks.named("helloFile") {
     finalizedBy("genTestInfo")
-}*/
+}
 
 listOf("compileJava", "compileTestJava", "test", "zipUniqueValue", "helloFile").forEach {
     tasks.named(it) {
