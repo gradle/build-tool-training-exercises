@@ -19,13 +19,6 @@ tasks.register("generateLocalUniqueValue") {
         outputFile.asFile.writeBytes(bytes)
     }
 }
-listOf("compileJava", "compileTestJava", "test", "zipUniqueValue", "helloFile").forEach {
-    tasks.named(it) {
-        inputs.files(tasks.named("generateLocalUniqueValue"))
-            .withPathSensitivity(PathSensitivity.NONE)
-            .withPropertyName("uniqueValue")
-    }
-}
 
 tasks.register<Zip>("zipUniqueValue") {
     // Inputs
@@ -45,4 +38,12 @@ tasks.register<Exec>("helloFile") {
     // Map inputs and outputs.
 
     // Enable working with cache.
+}
+
+listOf("compileJava", "compileTestJava", "test", "zipUniqueValue", "helloFile").forEach {
+    tasks.named(it) {
+        inputs.files(tasks.named("generateLocalUniqueValue"))
+            .withPathSensitivity(PathSensitivity.NONE)
+            .withPropertyName("uniqueValue")
+    }
 }
