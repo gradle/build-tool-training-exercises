@@ -4,11 +4,35 @@
 package com.gradle.lab;
 
 import org.junit.jupiter.api.Test;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Random;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
+
+    private static final File RESOURCES_DIR = new File("src/test/resources");
+
     @Test void appHasAGreeting() {
         App classUnderTest = new App();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");
     }
+
+    /*@Test void writeToResourcesDir() throws IOException {
+        Random rand = new Random();
+        int timeTaken = rand.nextInt(1000000);
+
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource("data.txt").getFile());
+        String outputFilePath = file.getAbsolutePath().replace("data", "output");
+        BufferedWriter writer = new BufferedWriter(new FileWriter(outputFilePath.toString()));
+        writer.write("Time taken: " + timeTaken + " seconds");
+        writer.close();
+    }*/
 }

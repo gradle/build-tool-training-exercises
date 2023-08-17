@@ -45,6 +45,23 @@ tasks.register<Exec>("helloFile") {
     outputs.cacheIf { true }
 }
 
+/*tasks.register("genTestInfo") {
+    outputs.file(layout.buildDirectory.file("hello.txt"))
+        .withPropertyName("outputFile")
+
+    doLast {
+        val file: Provider<RegularFile> = layout.buildDirectory.file("hello.txt")
+
+        val printWriter: PrintWriter = PrintWriter(FileWriter(file.get().asFile))
+        printWriter.println("some info")
+        printWriter.close()
+    }
+}
+
+tasks.named("helloFile") {
+    finalizedBy("genTestInfo")
+}*/
+
 listOf("compileJava", "compileTestJava", "test", "zipUniqueValue", "helloFile").forEach {
     tasks.named(it) {
         inputs.files(tasks.named("generateLocalUniqueValue"))

@@ -25,26 +25,6 @@ you will go over the following:
     * Strongly recommend taking *Incremental Builds and Build Caching* training first
 
 ---
-### Note that Remote Cache is Disabled
-
-In the `settings.gradle.kts` file notice that the local cache is enabled while the
-remote cache is disabled. Feel free to enable the remote cache if you want to use
-build scan comparison to help analyze cache information.
-
-```kotlin
-buildCache {
-    local {
-        isEnabled = true
-        //...
-    }
-    remote {
-        isEnabled = false
-        //...
-    }
-}
-```
-
----
 ### Enable Caching for Zip Task
 
 Custom tasks based on the `Zip` task type will already have wiring for inputs

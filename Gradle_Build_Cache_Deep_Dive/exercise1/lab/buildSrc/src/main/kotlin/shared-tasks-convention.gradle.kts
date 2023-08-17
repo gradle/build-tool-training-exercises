@@ -1,5 +1,8 @@
-import org.gradle.api.tasks.PathSensitivity
+import java.io.FileWriter
+import java.io.PrintWriter
+import java.nio.file.Files
 import kotlin.random.Random
+
 
 /*
 This just guarantees that everyone running the lab pushes their own changes
@@ -39,6 +42,23 @@ tasks.register<Exec>("helloFile") {
 
     // Enable working with cache.
 }
+
+/*tasks.register("genTestInfo") {
+    outputs.file(layout.buildDirectory.file("hello.txt"))
+        .withPropertyName("outputFile")
+
+    doLast {
+        val file: Provider<RegularFile> = layout.buildDirectory.file("hello.txt")
+
+        val printWriter: PrintWriter = PrintWriter(FileWriter(file.get().asFile))
+        printWriter.println("some info")
+        printWriter.close()
+    }
+}
+
+tasks.named("helloFile") {
+    finalizedBy("genTestInfo")
+}*/
 
 listOf("compileJava", "compileTestJava", "test", "zipUniqueValue", "helloFile").forEach {
     tasks.named(it) {
