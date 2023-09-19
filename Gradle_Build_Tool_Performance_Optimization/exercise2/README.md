@@ -46,6 +46,11 @@ has new versions available. Execute the `:app:compileJava` task with a build sca
 ```
 
 Go to `Performance -> Network activity`. Notice the number of network calls.
+Go to `Performance -> Dependency resolution`. Notice the time taken.
+
+<p align="center">
+<img width="60%" height="60%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/97863615-8eb1-4c11-b618-da3a8c3bbcc8">
+</p>
 
 We want many of the android dependencies to be fetched **only** from maven central
 and the google repository. Add
@@ -90,5 +95,5 @@ Execute the `:app:compileJava` task with a build scan:
 ./gradlew :app:compileJava --scan
 ```
 
-Go to `Performance -> Network activity`. Notice the number of network calls in significantly less
-and the overall time taken is less too.
+Go to `Performance -> Network activity`. Notice the number of network calls is significantly less.
+Go to `Performance -> Dependency resolution`. Notice the time taken is also significantly less.

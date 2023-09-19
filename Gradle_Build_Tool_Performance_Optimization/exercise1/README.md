@@ -37,6 +37,10 @@ Notice that the task takes a long time to execute. In the build scan go to
 `Performance -> Configuration` and examine `app/build.gradle.kts`. Notice it says
 the `printClasspath` task is created immediately.
 
+<p align="center">
+<img width="60%" height="60%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/357edb9f-ad81-4484-b435-7c1c0f5d8080">
+</p>
+
 Open `app/build.gradle.kts` and examine how the task `printClasspath` is defined:
 
 ```kotlin
@@ -67,6 +71,10 @@ This will execute the `build` task on all the subprojects. Open the build
 scan and look at the `Timeline`. Notice that all the tasks are executed
 serially.
 
+<p align="center">
+<img width="60%" height="60%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/f5ceb5f7-8356-4f1d-ae09-efe1ea984c7a">
+</p>
+
 Add the following to `gradle.properties`:
 
 ```properties
@@ -83,11 +91,19 @@ Execute the `clean` and then the `build` task on the root project:
 Open the build  scan and look at the `Timeline`. Notice that now many tasks
 are executed in parallel and the time taken difference.
 
+<p align="center">
+<img width="60%" height="60%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/3ca3795e-ef7d-445f-8c05-2729acad96a4">
+</p>
+
 ---
 ### Enabling parallel execution for tests
 
 In the previous build scan, go to `Performance -> Task execution`. Notice the
 test tasks took a long time.
+
+<p align="center">
+<img width="60%" height="60%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/72121748-7c14-447b-b9f8-1fbd469ff572">
+</p>
 
 Open `task-config-convention.gradle.kts` which is under `buildSrc`. Add the following
 configuration to it:
