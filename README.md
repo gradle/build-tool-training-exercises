@@ -25,4 +25,4 @@ Below are the links to exercises for the different training sessions.
 * [**Android Apps with Gradle Build Tool**](Android_Apps_with_Gradle_Build_Tool/)
 * [**Gradle Build Tool Plugin Development**](Gradle_Build_Tool_Plugin_Development/)
 * [**Gradle Build Tool Configuration Organization**](Gradle_Build_Tool_Configuration_Organization/)
-* [**Gradle Build Tool Performance Optimization**](Gradle_Build_Tool_Performance Optimization/)
+* [**Gradle Build Tool Performance Optimization**](Gradle_Build_Tool_Performance_Optimization/)
