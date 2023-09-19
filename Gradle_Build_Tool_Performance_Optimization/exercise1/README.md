@@ -72,7 +72,7 @@ scan and look at the `Timeline`. Notice that all the tasks are executed
 serially.
 
 <p align="center">
-<img width="60%" height="60%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/f5ceb5f7-8356-4f1d-ae09-efe1ea984c7a">
+<img width="80%" height="80%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/f5ceb5f7-8356-4f1d-ae09-efe1ea984c7a">
 </p>
 
 Add the following to `gradle.properties`:
@@ -92,7 +92,7 @@ Open the build  scan and look at the `Timeline`. Notice that now many tasks
 are executed in parallel and the time taken difference.
 
 <p align="center">
-<img width="60%" height="60%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/3ca3795e-ef7d-445f-8c05-2729acad96a4">
+<img width="80%" height="80%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/3ca3795e-ef7d-445f-8c05-2729acad96a4">
 </p>
 
 ---
