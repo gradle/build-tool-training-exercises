@@ -1,0 +1,8 @@
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.4.0"
+}
+
+rootProject.name = "lab"
+include("app")
+include("ext")
+include("service")
