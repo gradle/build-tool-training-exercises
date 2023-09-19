@@ -157,3 +157,7 @@ Now execute the tasks twice:
 
 Notice on the second execution the outcome label `FROM-CACHE` and the overall
 execution time is much shorter.
+
+<p align="right">
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Gradle_Build_Tool_Performance_Optimization/exercise2">Exercise 2 >></a>
+</p>
