@@ -33,8 +33,6 @@ Open `mycatalog/build.gradle.kts` and apply the following plugins to it:
 1. version-catalog
 2. maven-publish
 
-**Note**: You will have to surround them with back-ticks.
-
 Now set the following variables:
 
 * `group` to "com.gradlelab"
@@ -115,6 +113,12 @@ Ensure things are working by executing the `test` task:
 
 ```bash
 ./gradlew :app:test
+```
+
+Also inspect the dependencies:
+
+```bash
+./gradlew :app:dep
 ```
 
 <p align="right">
