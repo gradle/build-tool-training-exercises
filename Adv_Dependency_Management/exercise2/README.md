@@ -30,7 +30,7 @@ Now set the following variables:
 * `group` to "com.gradlelab"
 * `version` to "1.3"
 
-Add a constrain for `gson`:
+Add a constraint for `gson`:
 
 ```kotlin
 dependencies {
