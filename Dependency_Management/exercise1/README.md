@@ -1,11 +1,11 @@
-## Advanced Dependency Management - Exercise 1
+## Dependency Management - Exercise 1
 
 <p align="left">
 <img width="10%" height="10%" src="https://user-images.githubusercontent.com/120980/174325546-8558160b-7f16-42cb-af0f-511849f22ebc.png">
 </p>
 
 This is a hands-on exercise to go along with the
-**Advanced Dependency Management** training module. In this exercise
+**Dependency Management** training module. In this exercise
 you will go over the following:
 
 * `Bucket` vs `Resolved` dependency configurations
@@ -127,5 +127,5 @@ Dependencies in the `api` configuration are used both during compilation
 and execution of downstream projects.
 
 <p align="right">
-<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Adv_Dependency_Management/exercise2">Exercise 2 >></a>
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Dependency_Management/exercise2">Exercise 2 >></a>
 </p>
