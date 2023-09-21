@@ -20,17 +20,7 @@ you will go over the following:
 ### Publishing platform
 
 Open the project in the `lab` folder. Open `myplatform/build.gradle.kts`
-and notice the constraint for `gson`:
-
-```kotlin
-dependencies {
-    constraints {
-        api("com.google.code.gson:gson:2.8.3")
-    }
-}
-```
-
-Apply the following plugins to the build file:
+and apply the following plugins to the build file:
 
 1. java-platform
 2. maven-publish
@@ -39,6 +29,16 @@ Now set the following variables:
 
 * `group` to "com.gradlelab"
 * `version` to "1.3"
+
+Add a constrain for `gson`:
+
+```kotlin
+dependencies {
+    constraints {
+        api("com.google.code.gson:gson:2.8.3")
+    }
+}
+```
 
 Now add configuration for publishing:
 
