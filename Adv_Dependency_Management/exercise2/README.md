@@ -91,6 +91,7 @@ Now add dependencies to the published platform and to `gson`. For the
 dependencies {
     implementation(platform("com.gradlelab:myplatform:1.3"))
     implementation("com.google.code.gson:gson")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
 }
 ```
 
