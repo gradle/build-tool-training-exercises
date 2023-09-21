@@ -1,0 +1,11 @@
+[libraries]
+guava = "com.google.guava:guava:32.1.2-jre"
+guice = "com.google.inject:guice:7.0.0"
+json = "org.json:json:20230618"
+gson = "com.google.code.gson:gson:2.10.1"
+
+# Test dependencies
+junit = "org.junit.jupiter:junit-jupiter:5.9.1"
+
+[bundles]
+core-libs = ["guava", "guice", "json"]
