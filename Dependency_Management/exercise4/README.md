@@ -37,7 +37,7 @@ Now add the dependency modules for the `model` subproject:
 
 ```toml
 [libraries]
-guava-model = ...
+guava-model = ""
 json = ""
 ```
 
