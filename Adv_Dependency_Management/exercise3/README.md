@@ -113,3 +113,7 @@ Execute the test task, there should be no errors:
 ```bash
 ./gradlew :app:test
 ```
+
+<p align="right">
+<a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Adv_Dependency_Management/exercise4">Exercise 4 >></a>
+</p>

@@ -24,7 +24,7 @@ configurations {
 
 dependencies {
     implementation(project(":model"))
-    /*implementation("com.google.inject:guice:5.0.0")
+    implementation("com.google.inject:guice:5.0.0")
     runtimeOnly("org.checkerframework:checker-qual:3.28.0")
 
     constraints {
@@ -34,11 +34,6 @@ dependencies {
                 strictly("[28.0-jre, 28.5-jre]")
             }
         }
-    }*/
-    implementation(libs.guice)
-    runtimeOnly(libs.checker.qual)
-    constraints {
-        implementation(libs.guava.constraints)
     }
 }
 
