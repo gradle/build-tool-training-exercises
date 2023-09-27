@@ -31,6 +31,10 @@ configurations {
         resolutionStrategy.activateDependencyLocking()
     }
 }
+
+dependencies {
+    implementation("com.google.inject:guice:5.1.0")
+}
 ```
 
 Run the following command to create a lock file:
