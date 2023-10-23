@@ -1,0 +1,36 @@
+plugins {
+    id 'cpp-library'
+    id 'maven-publish'
+}
+
+group =  'com.xilinx.samples'
+version = "6.5.4"
+
+project.ext.localRepoPath = "${rootProject.layout.projectDir}/../local-repo"
+
+library {
+    linkage = [Linkage.SHARED]
+    targetMachines = [machines.linux.x86_64, machines.windows.x86_64, machines.macOS.x86_64 ]
+    /*dependencies {
+        api "com.xilinx.samples:list:3.2.1"
+    }*/
+}
+
+repositories {
+    maven {
+        url "file://${project.localRepoPath}"
+    }
+}
+
+dependencies {
+    api "com.xilinx.samples:list:3.2.1"
+}
+
+publishing {
+    repositories {
+        maven {
+            name "local"
+            url "file://${project.localRepoPath}"
+        }
+    }
+}
