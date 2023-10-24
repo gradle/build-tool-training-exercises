@@ -1,0 +1,12 @@
+plugins {
+    id 'cpp-application'
+    id 'cpp-unit-test'
+}
+
+application {
+    targetMachines = [machines.linux.x86_64, machines.windows.x86_64, machines.macOS.x86_64 ]
+}
+
+dependencies {
+    implementation project(":model")
+}
