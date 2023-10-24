@@ -44,7 +44,7 @@ the `build` directory gets created. Explore this directory, notice the
 `exe/main/debug` directory with an `app` executable in there.
 
 <p align="center">
-<img width="80%" height="80%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/1a38f972-4f56-4c55-8da3-1a3b7c0348e6">
+<img width="40%" height="40%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/1a38f972-4f56-4c55-8da3-1a3b7c0348e6">
 </p>
 
 In the terminal run the app:
