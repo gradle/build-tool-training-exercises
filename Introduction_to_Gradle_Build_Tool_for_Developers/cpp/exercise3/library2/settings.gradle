@@ -1,0 +1,2 @@
+rootProject.name = 'library2'
+include('utilities')

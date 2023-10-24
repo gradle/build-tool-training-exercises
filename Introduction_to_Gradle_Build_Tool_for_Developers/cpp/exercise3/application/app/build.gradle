@@ -1,0 +1,33 @@
+plugins {
+    id 'cpp-application'
+    id 'maven-publish'
+}
+
+group =  'com.xilinx.samples'
+version = "7.4.4"
+
+project.ext.localRepoPath = "${rootProject.layout.projectDir}/../local-repo"
+
+application {
+    targetMachines = [machines.linux.x86_64, machines.windows.x86_64, machines.macOS.x86_64 ]
+}
+
+dependencies {
+    implementation "com.xilinx.samples:utilities:6.5.4"
+}
+
+repositories {
+    maven {
+        url "file://${project.localRepoPath}"
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            name "local"
+            url "file://${project.localRepoPath}"
+        }
+    }
+}
+

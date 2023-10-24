@@ -1,0 +1,30 @@
+plugins {
+    id 'maven-publish'
+    id 'cpp-library'
+    id 'cpp-unit-test'
+}
+
+group = 'com.xilinx.samples'
+version = "3.2.1"
+
+project.ext.localRepoPath = "${rootProject.layout.projectDir}/../local-repo"
+
+library {
+    linkage = [Linkage.SHARED]
+    targetMachines = [machines.linux.x86_64, machines.windows.x86_64, machines.macOS.x86_64 ]
+}
+
+repositories {
+    maven {
+        url "file://${project.localRepoPath}"
+    }
+}
+
+publishing {
+    repositories {
+        maven {
+            name "local"
+            url "file://${project.localRepoPath}"
+        }
+    }
+}
