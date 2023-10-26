@@ -42,7 +42,7 @@ dependencies {
     implementation("androidx.arch.core:core-common:2.2.0+")
     implementation("androidx.asynclayoutinflater:asynclayoutinflater:1.0.0+")
     implementation("androidx.benchmark:benchmark:1.0.0-alpha03+")
-    implementation("androidx.car:car:1.0.0-alpha7+")
+    /*implementation("androidx.car:car:1.0.0-alpha7+")
     implementation("androidx.cardview:cardview:1.0.0+")
     implementation("com.google.gms:google-services:4.3.15+")
     implementation("com.google.firebase:firebase-common:20.3.3+")
@@ -52,7 +52,7 @@ dependencies {
     implementation("com.google.firebase:firebase-ml-natural-language-translate:21.0.1+")
     implementation("com.google.firebase:firebase-storage:17.0.0+")
     implementation("com.google.firebase:firebase-measurement-connector:18.0.0+")
-    implementation("com.google.firebase:firebase-database:20.0.2+")
+    implementation("com.google.firebase:firebase-database:20.0.2+")*/
 }
 
 java {
