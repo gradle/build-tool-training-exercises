@@ -1,6 +1,6 @@
 plugins {
     application
-    //id("custom-tasks-convention")
+    id("task-config-convention")
 }
 
 repositories {
