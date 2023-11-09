@@ -28,7 +28,7 @@ Open a `Terminal` tab in the project directory and
 run `./gradlew :app:tasks --all`. Scroll up and explore the tasks.
 
 <p align="center">
-<img width="60%" height="60%" src="https://user-images.githubusercontent.com/120980/174327952-d0efd1f1-f3fa-4226-9937-ee7d84e488f3.png">
+<img width="60%" height="60%" src="https://github.com/gradle/build-tool-training-exercises/assets/120980/e0996084-8785-4520-853e-8f8f70c05722">
 </p>
 
 ---
