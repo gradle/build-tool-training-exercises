@@ -59,13 +59,6 @@ Once finished be sure to refresh the Gradle configs in the IDE.
 
 Now run the `buildWithMsg` task and see it run the build and print the message.
 
-<p align="center">
-<img width="40%" height="40%" src="https://user-images.githubusercontent.com/120980/174330023-ce004bf9-ced8-420a-9d00-64d3775eba8c.png">
-</p>
-
-You can refer to the [Solution](solution/app/build.gradle.kts#L44) if you
-get stuck.
-
 #### Task Using finalizedBy
 
 Next let's create a similar task that prints a message when the build is done.
@@ -100,22 +93,13 @@ Once finished be sure to refresh the Gradle configs in the IDE.
 
 Now run the `test` task and see it run tests and print the message.
 
-<p align="center">
-<img width="40%" height="40%" src="https://user-images.githubusercontent.com/120980/174330193-b5d084fa-a295-40aa-b839-f693f54584d0.png">
-</p>
-
 You can refer to the [Solution](solution/app/build.gradle.kts#L54) if you
 get stuck.
 
 #### Bonus: Copy Task
 
-Let's create a task that copies the XML test result report to the `tmp`
-folder. *Note*: We only want to copy the one XML file, not the `binary`
-directory.
-
-<p align="center">
-<img width="40%" height="40%" src="https://user-images.githubusercontent.com/120980/174330257-0a94a29d-f623-48b2-a4f5-829fd95561d2.png">
-</p>
+Let's create a task that copies the exe file to the `tmp`
+folder.
 
 Refer to the [Copy Task docs](https://docs.gradle.org/current/dsl/org.gradle.api.tasks.Copy.html)
 for help. The task will:
@@ -128,9 +112,6 @@ tasks.register("backupExe", Copy) {
     // Implement the task here.
 }
 ```
-
-You can refer to the [Solution](solution/app/build.gradle.kts) if you
-get stuck.
 
 <p align="right">
 <a href="https://github.com/gradle/build-tool-training-exercises/tree/main/Introduction_to_Gradle_Build_Tool_for_Build_Engineers/cpp/exercise2">Exercise 2 >></a>
