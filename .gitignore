@@ -1,2 +1,8 @@
 .idea
 .DS_Store
+.gradle
+
+build
+!*/src/**/build
+!*/*/src/**/build
+

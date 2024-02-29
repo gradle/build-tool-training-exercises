@@ -20,7 +20,7 @@ you will go over the following:
 ---
 ### Enable Remote Cache
 
-We will use the Gradle Enterprise Training instance as the remote cache. In
+We will use the DPE University Develocity instance as the remote cache. In
 the `settings.gradle.kts` update the configuration for the `buildCache`
 section by adding the `remote` block:
 
@@ -29,13 +29,9 @@ buildCache {
     local {
         ...
     }
-    remote<HttpBuildCache> {
-        url = uri("https://enterprise-training.gradle.com/cache/")
+    remote(gradleEnterprise.buildCache) {
+        isEnabled = true
         isPush = true
-        credentials {
-            username = System.getenv("CACHE_USERNAME")
-            password = System.getenv("CACHE_PASSWORD")
-        }
     }
 }
 ```
@@ -59,18 +55,19 @@ In the end your `settings.gradle.kts` will look as follows:
 
 ```kotlin
 plugins {
-  id("com.gradle.enterprise") version "3.8"
+  id("com.gradle.enterprise") version "3.16.2"
 }
 gradleEnterprise {
-  buildScan {
-    server = "https://enterprise-training.gradle.com"
-    capture {
-      isTaskInputFiles = true
+    server = "https://dpeuniversity-develocity.gradle.com"
+    buildScan {
+        publishAlways()
+        capture {
+            isTaskInputFiles = true
+        }
+        obfuscation {
+            ipAddresses { addresses -> addresses.map { "0.0.0.0" } }
+        }
     }
-    obfuscation {
-      ipAddresses { addresses -> addresses.map { "0.0.0.0" } }
-    }
-  }
 }
 
 rootProject.name = "lab"
@@ -81,23 +78,11 @@ buildCache {
     removeUnusedEntriesAfterDays = 30
     isEnabled = false
   }
-  remote<HttpBuildCache> {
-    url = uri("https://enterprise-training.gradle.com/cache/")
-    isPush = true
-    credentials {
-      username = System.getenv("CACHE_USERNAME")
-      password = System.getenv("CACHE_PASSWORD")
-    }
+  remote(gradleEnterprise.buildCache) {
+    isEnabled = true
+    isPush = true 
   }
 }
-```
-
-The instructor will provide the credentials. You can export them as environment
-variables. **Be sure to use single quotes for the values**:
-
-```bash
-export CACHE_USERNAME='someuser'
-export CACHE_PASSWORD='somepassword'
 ```
 
 To get an access key to the remote cache run:
@@ -107,7 +92,7 @@ $ ./gradlew :provisionGradleEnterpriseAccessKey
 ```
 
 Open the link and follow the steps to provision a key. **Note:** You will have to enter
-credentials to get an access key. The instructor will provide them to you.
+credentials to get an access key.
 
 ### Use Remote Cache and Compare Scans
 

@@ -18,7 +18,7 @@ pluginManagement {
 plugins {
     // Apply the foojay-resolver plugin to allow automatic download of JDKs
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.4.0"
-    id("com.gradle.enterprise") version "3.13.2"
+    id("com.gradle.enterprise") version "3.16.2"
 }
 
 gradleEnterprise {

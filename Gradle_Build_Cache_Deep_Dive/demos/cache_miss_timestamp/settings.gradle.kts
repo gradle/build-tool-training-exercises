@@ -7,11 +7,12 @@
  * in the user manual at https://docs.gradle.org/7.4.2/userguide/multi_project_builds.html
  */
 plugins {
-    id("com.gradle.enterprise") version "3.8"
+    id("com.gradle.enterprise") version "3.16.2"
 }
 gradleEnterprise {
+    server = "https://dpeuniversity-develocity.gradle.com"
     buildScan {
-        server = "https://enterprise-training.gradle.com"
+        publishAlways()
         capture {
             isTaskInputFiles = true
         }
@@ -29,14 +30,9 @@ buildCache {
         removeUnusedEntriesAfterDays = 30
         isEnabled = true
     }
-    remote<HttpBuildCache> {
+    remote(gradleEnterprise.buildCache) {
         isEnabled = false
-        url = uri("https://enterprise-training.gradle.com/cache/")
         isPush = true
-        credentials {
-            username = System.getenv("CACHE_USERNAME")
-            password = System.getenv("CACHE_PASSWORD")
-        }
     }
 }
 include("model")
